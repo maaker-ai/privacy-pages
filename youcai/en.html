@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — YouCai</title>
+<style>
+body { font-family: -apple-system, "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #2A1F14; background: #FBFAF5; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #2A1F14; }
+.meta { color: #8A7A68; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #EDE5D0; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+a { color: #5A7A3E; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5DDC8; color: #8A7A68; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>YouCai Privacy Policy</h1>
+<p class="meta">Last updated: April 20, 2026 · Applies to YouCai for iOS (version 1.0.0 onward)</p>
+
+<p>YouCai is a fridge vegetable tracker. We collect only what is needed to run the app. No ads, no profiling, no data resale.</p>
+
+<h2>1. What we collect</h2>
+<ul>
+<li><strong>Account</strong>: your email (for sign-in and sync). We do not collect phone numbers, real names, or government IDs</li>
+<li><strong>Vegetable records</strong>: the vegetables you manually enter or recognize via camera, along with quantity, storage location, purchase date, and shelf life</li>
+<li><strong>Consumption logs</strong>: the "cooked it / tossed it" events you log in-app</li>
+<li><strong>Subscription status</strong>: whether you are a YouCai Pro subscriber (derived from anonymous receipt data via Apple and RevenueCat). We never store your payment credentials</li>
+</ul>
+
+<h2>2. What we do not collect</h2>
+<ul>
+<li>No phone number</li>
+<li>No location data</li>
+<li>No contacts or microphone access</li>
+<li>No device identifiers (IMEI, IDFA, OAID)</li>
+<li>No advertising SDK, no behavioral tracking</li>
+</ul>
+
+<h2>3. AI fridge recognition (important)</h2>
+<p>When you use the "Snap a photo" feature:</p>
+<ul>
+<li>Your photo is <strong>compressed to 1024px</strong> and forwarded <strong>once</strong> through our server (<code>recipe.tucao.art</code>, self-operated) to the OpenRouter AI gateway for visual recognition</li>
+<li><strong>We do not retain photos</strong>: our server holds image data only during the request and discards it immediately after the response. No disk write, no log, no database</li>
+<li>OpenRouter retains inputs briefly per its policy for safety auditing. See <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter Privacy Policy</a> for details</li>
+<li>The recognized result (vegetable names, quantity estimates) is only written to our database after you confirm it</li>
+<li>Free tier is limited to 5 AI recognitions per day; we only keep a call counter in our <code>ai_quota</code> table for rate limiting</li>
+</ul>
+
+<h2>4. Where your data lives</h2>
+<p>Your account and vegetable records are stored on our <strong>self-hosted Supabase instance</strong> (<code>api.maaker.cn</code>, located in a mainland China data center that we operate ourselves). We do not delegate hosting to any third-party cloud, and your data does not cross borders.</p>
+<p>Row-level security (RLS) policies ensure each user can only read and write their own data.</p>
+
+<h2>5. Third-party services</h2>
+<ul>
+<li><strong>RevenueCat</strong>: manages subscriptions. It only sees anonymous subscriber identifiers and Apple's receipt — <strong>not your email or vegetable data</strong>. See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+<li><strong>Apple App Store</strong>: processes all in-app purchases. We never touch your credit card or Apple ID password</li>
+<li><strong>OpenRouter</strong>: passively invoked only during AI recognition (see section 3)</li>
+</ul>
+
+<h2>6. Notifications</h2>
+<p>Enabled only if you opt in:</p>
+<ul>
+<li><strong>Expiry reminders</strong>: local notifications at T-3, T-1, and T-0 days before a vegetable expires</li>
+<li><strong>Morning market reminder</strong>: optional daily 7:00 AM reminder</li>
+</ul>
+<p>All notifications are <strong>local</strong> (scheduled by iOS). Nothing hits a push server, and we cannot tell when or whether you opened them.</p>
+
+<h2>7. Permissions</h2>
+<ul>
+<li><code>Camera</code>: to take photos of your fridge for AI recognition</li>
+<li><code>Photo Library</code>: to pick existing photos for AI recognition</li>
+<li><code>Notifications</code>: expiry and morning reminders (toggleable in Settings)</li>
+</ul>
+
+<h2>8. Data export and deletion</h2>
+<ul>
+<li><strong>Export</strong>: Profile &gt; Export Data gives you a JSON file with every vegetable, consumption log, and stat under your account</li>
+<li><strong>Account deletion</strong>: email <a href="mailto:support@maaker.cn">support@maaker.cn</a> with your deletion request. We fully purge your account, vegetables, consumption logs, and quota records within 7 days</li>
+<li>Subscription records on Apple / RevenueCat side expire on their own schedule; we keep only an anonymous "was a subscriber" counter locally</li>
+</ul>
+
+<h2>9. Children</h2>
+<p>YouCai is not directed at children under 13 and we do not knowingly collect information from them.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>If a future version changes how we handle data, we will notify you in-app and update this page. Material changes will prompt re-consent on next launch.</p>
+
+<h2>11. Contact</h2>
+<p>For questions or to exercise your data rights (access / correction / deletion):</p>
+<ul>
+<li>Email: <a href="mailto:support@maaker.cn">support@maaker.cn</a></li>
+</ul>
+
+<h2 id="support">12. Support</h2>
+<p>Found a bug? Have a feature request? Email <a href="mailto:support@maaker.cn">support@maaker.cn</a> — we read every message weekly.</p>
+
+<div class="footer">
+<p>YouCai · © 2026 Maaker.AI · Bundle ID <code>ai.maaker.youcai</code> · <a href="./index.html">简体中文</a></p>
+</div>
+
+</body>
+</html>

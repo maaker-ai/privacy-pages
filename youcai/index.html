@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — 有菜</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #2A1F14; background: #FBFAF5; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #2A1F14; }
+.meta { color: #8A7A68; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #EDE5D0; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+a { color: #5A7A3E; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5DDC8; color: #8A7A68; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>有菜 隐私政策</h1>
+<p class="meta">最后更新：2026 年 4 月 20 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
+
+<p>有菜（YouCai）是一款冰箱蔬菜管理工具。我们秉持数据最小化原则：只收集运行 App 必需的数据，不做广告、不做画像、不做数据转卖。</p>
+
+<h2>1. 我们收集什么</h2>
+<ul>
+<li><strong>账号信息</strong>：你的邮箱地址（用于登录和数据同步）。不收集手机号、真实姓名、身份证号</li>
+<li><strong>蔬菜记录</strong>：你手动录入或拍照识别的蔬菜名称、数量、存放位置、入库日期、保质期</li>
+<li><strong>消耗记录</strong>：你在 App 内记录的"我做了 / 丢掉了"行为日志</li>
+<li><strong>订阅状态</strong>：是否为 YouCai Pro 订阅用户（通过苹果和 RevenueCat 返回的匿名订阅凭据判断），不存储任何支付凭据</li>
+</ul>
+
+<h2>2. 不收集什么</h2>
+<ul>
+<li>不收集手机号</li>
+<li>不收集位置信息</li>
+<li>不收集通讯录、麦克风</li>
+<li>不收集设备标识（IMEI、IDFA、OAID 等）</li>
+<li>不集成任何广告 SDK、不做行为追踪</li>
+</ul>
+
+<h2>3. AI 拍冰箱识别（关键）</h2>
+<p>当你使用 "拍一张" 功能时：</p>
+<ul>
+<li>照片会<strong>压缩到 1024px</strong>后经我们的服务器（<code>recipe.tucao.art</code>，自运营）<strong>一次性转发到 OpenRouter AI 网关</strong>完成视觉识别</li>
+<li><strong>我们不留存照片</strong>：服务器端只在请求处理期间临时持有图片数据，响应完成立即丢弃，不写磁盘、不进日志、不入数据库</li>
+<li>OpenRouter 按其官方政策短期保留（用于安全审计）。如需详细条款请参阅 <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter 隐私政策</a></li>
+<li>识别结果（蔬菜名称、数量估计）由你确认入库后才写入数据库</li>
+<li>免费用户每日限 5 次识别，我们仅在 <code>ai_quota</code> 表保存调用次数计数用于频控</li>
+</ul>
+
+<h2>4. 数据存储在哪</h2>
+<p>你的账号和蔬菜记录存放在我们<strong>自托管的 Supabase 实例</strong>（<code>api.maaker.cn</code>，部署在国内机房，独立运维）。不走任何第三方云厂商的托管服务，不跨境传输你的数据。</p>
+<p>App 内通过行级安全策略（RLS）确保：每个用户只能读写自己的数据，其他用户无法访问。</p>
+
+<h2>5. 第三方服务</h2>
+<ul>
+<li><strong>RevenueCat</strong>：处理订阅管理。只接触匿名订阅标识符和苹果返回的交易凭据，<strong>不接触邮箱或蔬菜数据</strong>。参阅 <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat 隐私政策</a></li>
+<li><strong>Apple App Store</strong>：处理所有内购支付。我们不接触你的信用卡或 Apple ID 密码</li>
+<li><strong>OpenRouter</strong>：仅在 AI 识别时被动调用（见第 3 节）</li>
+</ul>
+
+<h2>6. 推送通知</h2>
+<p>仅在你开启时启用：</p>
+<ul>
+<li><strong>临期提醒</strong>：蔬菜剩余 3 天 / 1 天 / 当天在本地触发推送</li>
+<li><strong>早市提醒</strong>：每天 7:00 可选提醒</li>
+</ul>
+<p>所有通知均为<strong>本地通知</strong>（由系统调度），不走任何推送服务器，也不会告诉我们你何时看了通知。</p>
+
+<h2>7. 权限说明</h2>
+<ul>
+<li><code>相机</code>：拍冰箱照片用于 AI 识别</li>
+<li><code>相册</code>：从相册选取已有照片用于 AI 识别</li>
+<li><code>通知</code>：临期和早市提醒（可在设置内关闭）</li>
+</ul>
+
+<h2>8. 数据导出和删除</h2>
+<ul>
+<li><strong>导出</strong>：在 "我的 &gt; 导出数据" 可一键导出你账号下所有蔬菜、消耗记录为 JSON 文件</li>
+<li><strong>删除账号</strong>：发送邮件至 <a href="mailto:support@maaker.cn">support@maaker.cn</a> 注明注销，我们在 7 天内彻底删除你的账号、蔬菜、消耗日志、配额记录</li>
+<li>订阅记录保留到苹果/RevenueCat 侧自然过期；我们本地仅保留"曾经订阅过"的匿名计数</li>
+</ul>
+
+<h2>9. 儿童信息</h2>
+<p>有菜不针对 13 岁以下儿童设计，也不主动收集儿童信息。</p>
+
+<h2>10. 政策变更</h2>
+<p>如未来版本调整数据处理方式，我们会在 App 内提示并在本页面更新。重大变更会在下一次启动时要求你重新确认。</p>
+
+<h2>11. 联系我们</h2>
+<p>如有任何疑问或行使你的数据权利（查询 / 更正 / 删除），请邮件联系：</p>
+<ul>
+<li>邮箱：<a href="mailto:support@maaker.cn">support@maaker.cn</a></li>
+</ul>
+
+<h2 id="support">12. 支持</h2>
+<p>有菜遇到 Bug、想建议新功能、想反馈体验问题？发邮件给我们：<a href="mailto:support@maaker.cn">support@maaker.cn</a>。我们每周会读邮件。</p>
+
+<div class="footer">
+<p>有菜 YouCai · © 2026 Maaker.AI · Bundle ID <code>ai.maaker.youcai</code> · <a href="./en.html">English</a></p>
+</div>
+
+</body>
+</html>
