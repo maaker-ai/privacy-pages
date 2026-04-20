@@ -23,7 +23,7 @@ code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; 
 <h1>CoupleQuiz Privacy Policy</h1>
 <p class="meta">Last updated: April 20, 2026 · Applies to CoupleQuiz for iOS</p>
 
-<p>TL;DR: CoupleQuiz does not collect your personal information. Everything stays on your device, except purchase receipts which are processed by Apple and RevenueCat for subscription management.</p>
+<p>TL;DR: CoupleQuiz is a one-time paid download. It does not collect your personal information, contains no in-app purchases or subscriptions, and works fully offline after install. Everything stays on your device.</p>
 
 <h2>1. What we don't collect</h2>
 <ul>
@@ -36,24 +36,15 @@ code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; 
 </ul>
 
 <h2>2. Where your data lives</h2>
-<p>Everything you create inside CoupleQuiz — unlocked packs, language preference, game progress — is stored locally in the app's iOS sandbox. It never leaves your device through our servers.</p>
-<p>Uninstalling the app deletes all local data. Your subscription and one-time purchases are tied to your Apple ID and can be restored on any device signed in with the same Apple ID via the "Restore Purchases" feature.</p>
+<p>Everything you create inside CoupleQuiz — language preference, game progress, saved cards — is stored locally in the app's iOS sandbox. It never leaves your device through our servers.</p>
+<p>Uninstalling the app deletes all local data. Your record of having purchased the app is kept in your Apple account; you can re-download CoupleQuiz for free on any iOS device signed in with the same Apple ID.</p>
 
 <h2>3. Third-party services</h2>
-<p>CoupleQuiz uses the following third-party services strictly to enable in-app purchases (IAP):</p>
-<ul>
-<li><b>Apple StoreKit</b>: Apple's official in-app purchase framework, used to process one-time pack unlocks (Deep Talk, Spicy, Therapy, etc.) and subscriptions. Purchase receipts are sent to Apple's servers for validation. Data handling follows the <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a>.</li>
-<li><b>RevenueCat</b>: A third-party subscription management platform that helps us manage subscription state and handle "Restore Purchases". RevenueCat receives anonymous purchase state queries keyed by Apple-generated anonymous identifiers; no name, email, or personal identifiers are sent. Data handling follows the <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a>.</li>
-</ul>
-<p>Beyond these two services, CoupleQuiz does not send data to any other third party.</p>
+<p>CoupleQuiz is a one-time paid download. It contains <b>no in-app purchases, no subscriptions, and no ads</b>, and therefore integrates no third-party analytics, advertising, subscription management, or tracking SDKs.</p>
+<p>The download and payment flow itself is handled by the <b>Apple App Store and Apple StoreKit</b>, governed by the <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a>. As the developer, we do not see your payment details, name, email, or any other data from your Apple account.</p>
 
 <h2>4. Network usage</h2>
-<p>CoupleQuiz only uses the network in these situations:</p>
-<ul>
-<li>When you start a purchase or subscribe — Apple StoreKit communicates with Apple's servers.</li>
-<li>When you tap "Restore Purchases" — your subscription state is queried.</li>
-</ul>
-<p>Regular usage — flipping cards, answering prompts, switching packs — works fully offline once the pack is unlocked.</p>
+<p>After install, CoupleQuiz runs <b>fully offline</b>. All question cards are bundled inside the app — nothing needs to be downloaded or synced while you use it.</p>
 
 <h2>5. Permissions</h2>
 <p>CoupleQuiz does not request sensitive permissions such as contacts, photos, location, microphone, or camera. The Info.plist declares <code>NSUserTrackingUsageDescription</code> as a standard iOS field, but the current version of CoupleQuiz <b>does not perform any cross-app tracking</b> and the tracking authorization prompt is not triggered.</p>
