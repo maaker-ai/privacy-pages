@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — CoupleQuiz</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #222; background: #fafafa; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #333; }
+.meta { color: #888; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+a { color: #1a6eb5; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>CoupleQuiz 隐私政策</h1>
+<p class="meta">最后更新：2026 年 4 月 20 日 · 适用于 CoupleQuiz（iOS 版）</p>
+
+<p>先说结论：CoupleQuiz 不需要注册账号，不收集你的任何个人身份信息。你在 App 中产生的所有数据都保存在你自己的设备上。唯一会经过网络的是 Apple 和 RevenueCat 处理应用内购买所必需的凭据信息。</p>
+
+<h2>1. 我们不收集什么</h2>
+<ul>
+<li>不收集姓名、邮箱、手机号、身份证号等个人身份信息</li>
+<li>不收集位置信息</li>
+<li>不收集通讯录、相册、麦克风、相机等隐私权限</li>
+<li>不收集设备标识（IDFA、IDFV 等广告标识）</li>
+<li>不收集使用行为、点击流、崩溃日志</li>
+<li>不使用任何广告 SDK 或数据分析 SDK</li>
+</ul>
+
+<h2>2. 数据存储在哪</h2>
+<p>你在 CoupleQuiz 中产生的所有本地数据——包括 Pack 解锁状态、语言偏好、游戏进度——全部保存在你 iOS 设备的应用沙盒中（App Sandbox），完全不经过我们的服务器。</p>
+<p>卸载 App 即删除所有本地数据。你的订阅和单次解锁购买记录由 Apple 账户保管，可在任意一台登录同一 Apple ID 的设备上通过「恢复购买」功能找回。</p>
+
+<h2>3. 第三方服务披露</h2>
+<p>CoupleQuiz 使用以下第三方服务处理应用内购买（IAP），这是提供订阅和解锁功能所必需的：</p>
+<ul>
+<li><b>Apple StoreKit</b>：Apple 官方的应用内购买框架，用于处理单次解锁购买（如 Deep Talk、Spicy、Therapy 等 Pack）和订阅。购买凭据（receipt）会发送给 Apple 服务器进行验证。数据处理遵循 <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple 隐私政策</a>。</li>
+<li><b>RevenueCat</b>：第三方订阅管理平台，帮助我们管理订阅状态、处理「恢复购买」。RevenueCat 接收匿名的购买状态查询（基于 Apple 生成的匿名用户标识），不包含你的姓名、邮箱等个人信息。数据处理遵循 <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat 隐私政策</a>。</li>
+</ul>
+<p>除此之外，CoupleQuiz 不向任何第三方服务发送数据。</p>
+
+<h2>4. 网络使用</h2>
+<p>CoupleQuiz 仅在以下场景需要联网：</p>
+<ul>
+<li>发起购买或订阅时，通过 Apple StoreKit 与 Apple 服务器通讯</li>
+<li>点击「恢复购买」时，查询订阅状态</li>
+</ul>
+<p>在日常使用（翻卡、答题、切换 Pack）过程中，App 不需要联网，可完全离线使用已解锁的内容。</p>
+
+<h2>5. 权限说明</h2>
+<p>CoupleQuiz 不申请通讯录、相册、位置、麦克风、相机等敏感权限。App 的 Info.plist 中声明了 <code>NSUserTrackingUsageDescription</code> 是 iOS 系统要求的标准字段，但 CoupleQuiz 当前版本<b>不进行任何跨应用追踪</b>，也不会触发追踪授权弹窗。</p>
+
+<h2>6. 儿童隐私</h2>
+<p>CoupleQuiz 是面向成年情侣的对话游戏，不面向 13 岁以下儿童。我们不会主动收集任何儿童的个人信息。</p>
+
+<h2>7. 政策变更</h2>
+<p>如未来版本调整隐私策略（例如接入新的第三方服务），我们会在 App 内以弹窗或设置页提示，并同步更新本页面的「最后更新」日期。</p>
+
+<h2>8. 联系我们</h2>
+<p>如对本隐私政策有疑问或希望行使数据权利，可通过以下方式联系：</p>
+<ul>
+<li>邮箱：<a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a></li>
+</ul>
+
+<div class="footer">
+<p>CoupleQuiz · © 2026 Maaker.AI · 本页英文版：<a href="./en.html">English</a></p>
+<p>相关页面：<a href="./terms.html">用户协议</a> · <a href="./support.html">技术支持</a></p>
+</div>
+
+</body>
+</html>
