@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — AI Voice Notes</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #222; background: #fafafa; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #333; }
+.meta { color: #888; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.callout { background: #eef2ff; border-left: 4px solid #4f46e5; padding: 12px 16px; border-radius: 4px; margin: 16px 0; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>AI Voice Notes 隐私政策</h1>
+<p class="meta">最后更新：2026 年 4 月 26 日 · 适用于 AI Voice Notes（iOS）</p>
+
+<div class="callout">
+<strong>简要总结：</strong>录音和笔记数据保存在你的设备本地，不上传不同步。仅"语音转文字"得到的纯文本会一次性发送到我们的 AI 服务做结构化处理（生成标题/摘要/待办），用完即丢，不会留底，不会用于训练。
+</div>
+
+<h2>1. 我们收集什么</h2>
+<p>AI Voice Notes 设计上"少收集、多本地化"。我们收集的有：</p>
+<ul>
+<li><strong>录音音频</strong>（仅本地）：你按下"开始录音"产生的音频文件，保存在你设备的应用沙盒目录，不会上传到任何服务器。</li>
+<li><strong>转录文本</strong>（一次性传输）：录音通过 Apple 设备本地的语音识别服务（Speech Framework）转成文字。这段文字会一次性发送给我们的 AI 服务做结构化（生成标题、摘要、待办、标签），处理结果返回后即用即丢，不留底、不存储、不用于模型训练。</li>
+<li><strong>订阅状态</strong>（通过 RevenueCat）：如果你订阅了 Pro 版本，我们使用 RevenueCat 验证订阅状态。RevenueCat 会接收到匿名设备标识符（用于防欺诈），不接收你的姓名、邮箱或笔记内容。</li>
+</ul>
+
+<h2>2. 我们不收集什么</h2>
+<ul>
+<li>不收集姓名、邮箱、手机号、身份证号等个人身份信息（无需注册账号）</li>
+<li>不收集位置信息</li>
+<li>不收集通讯录、相册、日历、健康数据</li>
+<li>不收集广告标识符（IDFA）或追踪标识符</li>
+<li>不收集使用行为分析、点击流、第三方追踪</li>
+<li>不收集崩溃日志（无 crash reporter SDK）</li>
+</ul>
+
+<h2>3. 数据存储位置</h2>
+<ul>
+<li><strong>录音音频</strong>：保存在 iOS 应用沙盒（Application Support 目录），仅本应用可读取，卸载 App 自动删除。</li>
+<li><strong>笔记元数据</strong>（标题/摘要/待办/标签/转录文本）：保存在本地 AsyncStorage。卸载 App 自动删除。</li>
+<li><strong>转录文本</strong>在传输给 AI 服务时使用 HTTPS 加密。</li>
+</ul>
+
+<h2>4. 第三方服务</h2>
+<p>AI Voice Notes 使用以下第三方服务：</p>
+<ul>
+<li><strong>AI 结构化处理</strong>：转录后的文本发送到我们自有的 Supabase Edge Function (<code>rxcrvznwlqcaqrlaxmdf.supabase.co</code>)，由 Google Gemini API 处理。Google 不会将这些文本用于模型训练（基于 Gemini API 服务条款）。我们的服务不存储任何转录文本。</li>
+<li><strong>RevenueCat</strong>：用于管理 App 内订阅。仅接收匿名订阅事件，不接收笔记内容。详见 <a href="https://www.revenuecat.com/privacy/" target="_blank">RevenueCat 隐私政策</a>。</li>
+<li><strong>Apple Speech Recognition</strong>：使用 Apple 设备本地的语音识别（on-device）。在某些旧设备上可能 fallback 到 Apple 服务器识别，详见 <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple 隐私政策</a>。</li>
+</ul>
+
+<h2>5. iOS 权限说明</h2>
+<p>AI Voice Notes 申请以下 iOS 权限：</p>
+<ul>
+<li><code>NSMicrophoneUsageDescription</code>（麦克风）：用于录制语音笔记。</li>
+<li><code>NSSpeechRecognitionUsageDescription</code>（语音识别）：用于将录音转成文字（设备本地处理）。</li>
+</ul>
+<p>不申请相机、相册、位置、通讯录等其他权限。</p>
+
+<h2>6. 数据删除</h2>
+<p>你随时可以：</p>
+<ul>
+<li>在笔记详情页或列表里单独删除某条笔记</li>
+<li>在"设置 → 危险操作 → 清除所有备忘"一键清除全部本地数据</li>
+<li>卸载 App 自动清除全部数据</li>
+</ul>
+<p>因为转录文本不在我们服务器留底，不需要"申请删除我的数据"流程。</p>
+
+<h2>7. 儿童信息</h2>
+<p>AI Voice Notes 不针对 13 岁以下儿童设计，也不主动收集儿童信息。如果你是家长或监护人发现儿童使用了本应用并有相关疑问，请通过下方邮箱联系我们。</p>
+
+<h2>8. 政策变更</h2>
+<p>如未来版本需要调整隐私策略（例如增加云端同步功能），我们会在 App 内显著位置提示，并在本页面更新"最后更新"日期。重大变更会在 App 启动时提示用户重新阅读。</p>
+
+<h2>9. 联系我们</h2>
+<p>如对本隐私政策有任何疑问，请通过以下方式联系：</p>
+<ul>
+<li>邮箱：<a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a></li>
+</ul>
+
+<div class="footer">
+<p>AI Voice Notes · © 2026 Maaker.AI · 本页英文版：<a href="./en.html">English</a></p>
+</div>
+
+</body>
+</html>

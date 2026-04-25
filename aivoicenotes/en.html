@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AI Voice Notes</title>
+<style>
+body { font-family: -apple-system, "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #222; background: #fafafa; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #333; }
+.meta { color: #888; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.callout { background: #eef2ff; border-left: 4px solid #4f46e5; padding: 12px 16px; border-radius: 4px; margin: 16px 0; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>AI Voice Notes Privacy Policy</h1>
+<p class="meta">Last updated: April 26, 2026 · Applies to AI Voice Notes (iOS)</p>
+
+<div class="callout">
+<strong>TL;DR:</strong> Recordings and notes stay on your device — never uploaded, never synced. Only the plain transcribed text (after on-device speech-to-text) is sent once to our AI service for structuring (title / summary / todos), with results returned and the text immediately discarded — no storage, no model training.
+</div>
+
+<h2>1. What we collect</h2>
+<p>AI Voice Notes is designed to "collect minimal, keep local":</p>
+<ul>
+<li><strong>Audio recordings</strong> (local only): Audio files you create by tapping "Start Recording" are stored in your app's iOS sandbox (Application Support directory). Never uploaded.</li>
+<li><strong>Transcribed text</strong> (one-time transmission): Audio is converted to text using Apple's on-device Speech Framework. The resulting text is sent once to our AI service for structuring (generating title, summary, todos, tags). Results are returned and the text is immediately discarded — no storage, no logging, no model training.</li>
+<li><strong>Subscription status</strong> (via RevenueCat): If you subscribe to Pro, we use RevenueCat to verify subscription state. RevenueCat receives an anonymous device identifier (for fraud prevention), not your name, email, or note content.</li>
+</ul>
+
+<h2>2. What we do NOT collect</h2>
+<ul>
+<li>No personal identifiers (name, email, phone, ID — no account required)</li>
+<li>No location data</li>
+<li>No contacts, photos, calendar, or health data</li>
+<li>No advertising identifiers (IDFA) or tracking identifiers</li>
+<li>No usage analytics, click streams, or third-party tracking</li>
+<li>No crash logs (no crash reporter SDK)</li>
+</ul>
+
+<h2>3. Where data is stored</h2>
+<ul>
+<li><strong>Audio recordings</strong>: iOS app sandbox (Application Support), accessible only by this app. Deleted when you uninstall.</li>
+<li><strong>Note metadata</strong> (title / summary / todos / tags / transcript text): Local AsyncStorage. Deleted when you uninstall.</li>
+<li><strong>Transcript transmission</strong> to AI service uses HTTPS encryption.</li>
+</ul>
+
+<h2>4. Third-party services</h2>
+<p>AI Voice Notes uses the following third-party services:</p>
+<ul>
+<li><strong>AI structuring</strong>: Transcribed text is sent to our own Supabase Edge Function (<code>rxcrvznwlqcaqrlaxmdf.supabase.co</code>), processed by Google Gemini API. Google does not use this text for model training (per Gemini API Terms). Our service stores no transcript text.</li>
+<li><strong>RevenueCat</strong>: For in-app subscription management. Receives anonymous subscription events only, no note content. See <a href="https://www.revenuecat.com/privacy/" target="_blank">RevenueCat Privacy Policy</a>.</li>
+<li><strong>Apple Speech Recognition</strong>: Uses Apple's on-device speech recognition. On older devices may fall back to Apple servers. See <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a>.</li>
+</ul>
+
+<h2>5. iOS permissions</h2>
+<p>AI Voice Notes requests the following iOS permissions:</p>
+<ul>
+<li><code>NSMicrophoneUsageDescription</code> (Microphone): For recording voice notes.</li>
+<li><code>NSSpeechRecognitionUsageDescription</code> (Speech Recognition): For converting recordings to text (on-device).</li>
+</ul>
+<p>We do not request camera, photos, location, contacts, or other permissions.</p>
+
+<h2>6. Data deletion</h2>
+<p>You can at any time:</p>
+<ul>
+<li>Delete a single note from the note detail or list view</li>
+<li>Wipe all local data via Settings → Danger Zone → Clear All Notes</li>
+<li>Uninstall the app to remove everything</li>
+</ul>
+<p>Because transcript text is not stored on our servers, no "delete my data" request flow is needed.</p>
+
+<h2>7. Children's information</h2>
+<p>AI Voice Notes is not designed for children under 13 and does not knowingly collect children's information. If you are a parent or guardian and discover that a child has used the app and have concerns, please contact us via email below.</p>
+
+<h2>8. Policy changes</h2>
+<p>If a future version requires adjusting the privacy policy (e.g., adding cloud sync), we will notify users prominently in-app and update the "Last updated" date on this page. Significant changes will prompt users to re-read the policy on app launch.</p>
+
+<h2>9. Contact us</h2>
+<p>For questions about this privacy policy, please contact:</p>
+<ul>
+<li>Email: <a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a></li>
+</ul>
+
+<div class="footer">
+<p>AI Voice Notes · © 2026 Maaker.AI · 中文版：<a href="./index.html">中文</a></p>
+</div>
+
+</body>
+</html>
