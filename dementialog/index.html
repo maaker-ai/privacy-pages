@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — DementiaLog</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 760px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #222; background: #fafafa; }
+h1 { font-size: 28px; margin-bottom: 8px; color: #6B9080; }
+h2 { font-size: 20px; margin-top: 32px; color: #2D3E40; border-bottom: 2px solid #EAF0ED; padding-bottom: 8px; }
+h3 { font-size: 16px; margin-top: 20px; color: #2D3E40; }
+.meta { color: #888; font-size: 14px; margin-bottom: 24px; }
+.tldr { background: #EAF0ED; border-left: 4px solid #6B9080; padding: 16px 20px; border-radius: 4px; margin: 24px 0; }
+.tldr li { margin: 4px 0; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 14px; }
+th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; vertical-align: top; }
+th { background: #f0f0f0; font-weight: 600; }
+.lang-switch { text-align: right; font-size: 13px; margin-bottom: 12px; }
+.lang-switch a { color: #6B9080; text-decoration: none; }
+.disclaimer { background: #FBEAEA; border-left: 4px solid #C97B7B; padding: 16px 20px; border-radius: 4px; margin: 24px 0; font-size: 14px; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 13px; text-align: center; }
+a { color: #6B9080; }
+code { background: #eee; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="lang-switch"><a href="en.html">English</a></div>
+
+<h1>DementiaLog 隐私政策</h1>
+<p class="meta">最后更新：2026 年 4 月 26 日 · 适用于 DementiaLog iOS 版</p>
+
+<div class="tldr">
+<strong>简要说明（TL;DR）</strong>
+<ul>
+<li>我们收集你记录的健康观察、语音/照片附件和账户信息。我们<strong>不</strong>出售你的数据。</li>
+<li>AI 处理（转写/分类/摘要）在我们的服务器上完成。语音在转写后默认删除，除非你选择保留。</li>
+<li>你可以随时导出或删除所有数据。你邀请的家庭成员只看到你共享的 timeline。</li>
+<li>我们默认<strong>不是</strong> HIPAA 业务伙伴。如需签署 BAA，请联系我们 — 付费 Family/Enterprise 计划支持（即将推出）。</li>
+</ul>
+</div>
+
+<h2>1. 我们收集什么</h2>
+
+<h3>账户信息</h3>
+<ul>
+<li>邮箱地址（来自 Apple Sign-in 或 Google Sign-in）</li>
+<li>显示名称（你提供）</li>
+<li>Apple/Google 主题 ID（用于身份验证）</li>
+</ul>
+
+<h3>你提供的 Patient 信息</h3>
+<ul>
+<li>Patient 姓名（或你选择的化名）</li>
+<li>出生年份（默认不收集完整生日）</li>
+<li>痴呆阶段（MCI / Early / Middle / Late，可选）</li>
+<li>与你的关系</li>
+<li>邮政编码（可选，用于本地福利查询）</li>
+</ul>
+
+<h3>你记录的护理观察</h3>
+<ul>
+<li>语音记录（处理并在 <strong>24 小时内删除</strong>，除非你切换"保留语音"）</li>
+<li>语音转写后的文字</li>
+<li>你附加到事件的照片</li>
+<li>AI 分配的标签（行为/用药/情绪等）</li>
+<li>时间戳和可选位置</li>
+<li>家庭成员的评论和反应</li>
+<li>用药记录和依从性日志</li>
+<li>看护人 Burnout 自评（仅你私人可见，绝不共享）</li>
+<li>Apple HealthKit 数据（仅在你授予权限时，且仅限你选择的 patient）</li>
+</ul>
+
+<h3>技术数据</h3>
+<ul>
+<li>设备类型、OS 版本、App 版本（用于崩溃报告）</li>
+<li>IP 地址（瞬态，用于安全/限速；不长期存储）</li>
+<li>崩溃日志（匿名化）</li>
+</ul>
+
+<h3>我们不收集的数据</h3>
+<ul>
+<li>你的实时位置（仅 ZIP 邮编你提供时）</li>
+<li>通讯录</li>
+<li>你明确附加之外的照片</li>
+<li>主动录音会话之外的麦克风访问</li>
+<li>你未明确授予访问的 Apple Health 健康数据</li>
+</ul>
+
+<h2>2. 我们如何使用数据</h2>
+
+<table>
+<tr><th>用途</th><th>使用的数据</th><th>法律依据 (GDPR)</th></tr>
+<tr><td>提供服务（记录、存储、同步）</td><td>所有你的记录</td><td>合同</td></tr>
+<tr><td>AI 转写（Whisper）</td><td>语音录音</td><td>合同</td></tr>
+<tr><td>AI 分类与摘要（Claude）</td><td>转写文本 + 近期上下文</td><td>合同</td></tr>
+<tr><td>AI 行为预测（每周分析）</td><td>近期 timeline 事件</td><td>合同</td></tr>
+<tr><td>OCR 用药识别（GPT-4V）</td><td>你拍摄的药盒照片</td><td>合同</td></tr>
+<tr><td>账号身份验证</td><td>邮箱 + auth tokens</td><td>合同</td></tr>
+<tr><td>医生 PDF 导出</td><td>选定的 timeline + 用药数据</td><td>合同（你发起）</td></tr>
+<tr><td>家庭共享</td><td>你选择共享的记录</td><td>合同</td></tr>
+<tr><td>崩溃报告</td><td>匿名化设备/错误数据</td><td>合法利益</td></tr>
+<tr><td>服务改进（聚合、匿名）</td><td>使用统计</td><td>合法利益</td></tr>
+</table>
+
+<p><strong>我们绝不</strong>使用你的数据用于：广告商或数据经纪人销售、训练通用 AI 模型、未明确同意的营销通信。</p>
+
+<h2>3. 第三方服务</h2>
+
+<table>
+<tr><th>服务</th><th>用途</th><th>发送数据</th><th>隐私政策</th></tr>
+<tr><td>Supabase（自托管）</td><td>数据库与认证</td><td>账户与护理数据</td><td>我们在自有服务器上托管</td></tr>
+<tr><td>Cloudflare Workers</td><td>API edge</td><td>仅请求/响应</td><td><a href="https://www.cloudflare.com/privacypolicy/">链接</a></td></tr>
+<tr><td>OpenAI Whisper（经 OpenRouter）</td><td>语音转写</td><td>语音录音（24h 内删除）</td><td><a href="https://openai.com/policies/privacy-policy">链接</a></td></tr>
+<tr><td>Anthropic Claude（经 OpenRouter）</td><td>文本分类与摘要</td><td>转写文本 + 近期上下文</td><td><a href="https://www.anthropic.com/privacy">链接</a></td></tr>
+<tr><td>OpenAI GPT-4V（经 OpenRouter）</td><td>用药 OCR</td><td>药盒照片</td><td><a href="https://openai.com/policies/privacy-policy">链接</a></td></tr>
+<tr><td>RevenueCat</td><td>订阅管理</td><td>匿名购买事件</td><td><a href="https://www.revenuecat.com/privacy">链接</a></td></tr>
+<tr><td>Apple App Store</td><td>支付处理</td><td>Apple 处理所有支付数据</td><td><a href="https://www.apple.com/legal/privacy/">链接</a></td></tr>
+</table>
+
+<p><strong>关于 AI 提供商的重要说明</strong>：OpenRouter 和底层 AI 提供商（OpenAI、Anthropic）承诺<strong>不会用付费 API 数据训练他们的模型</strong>。我们专门使用付费 API 层级。</p>
+
+<h2>4. 数据保留</h2>
+
+<table>
+<tr><th>数据类型</th><th>保留期</th></tr>
+<tr><td>语音录音</td><td>转写后 24 小时内删除（除非你选择保留）</td></tr>
+<tr><td>转写文本与 timeline 事件</td><td>直到你删除或注销账户</td></tr>
+<tr><td>账户数据</td><td>注销后 30 天内删除</td></tr>
+<tr><td>备份数据</td><td>删除后最多 90 天（加密，可在用户请求下恢复）</td></tr>
+<tr><td>匿名使用统计</td><td>无限期（无法关联到你）</td></tr>
+<tr><td>崩溃报告</td><td>12 个月</td></tr>
+</table>
+
+<p>你可以：</p>
+<ul>
+<li><strong>导出</strong>：设置 → 数据 → 导出全部数据（JSON 文件邮件给你）</li>
+<li><strong>删除账户</strong>：设置 → 账户 → 删除账户（7 天宽限期后不可逆）</li>
+</ul>
+
+<h2>5. 数据共享与家庭成员</h2>
+
+<ul>
+<li>你通过 DementiaLog Family Invite 邀请的家庭成员，将获得对你共享的 <strong>特定 patient timeline</strong> 的访问权，按你分配的角色（配偶/子女/兄弟姐妹/专业护理/朋友）。</li>
+<li>看护人 Burnout 自评和你的私人笔记<strong>绝不</strong>与任何人共享。</li>
+<li>你可以随时在 设置 → 家庭 撤销任何看护人的访问。</li>
+<li>移除看护人不会删除他们过去添加的条目；只撤销未来访问。</li>
+</ul>
+
+<h2>6. 安全</h2>
+
+<ul>
+<li>所有传输数据使用 TLS 1.3</li>
+<li>数据库静态加密（AES-256）</li>
+<li>敏感医疗字段（笔记、转写）使用从你的认证派生的每用户密钥加密</li>
+<li>语音录音在转写前存储在加密对象存储中，使用短期访问 URL</li>
+<li>我们遵循 OWASP 最佳实践，每季度进行内部安全审查</li>
+<li>我们<strong>不</strong>公开声称 HIPAA 合规，但我们的架构遵循 HIPAA 技术安全措施原则</li>
+</ul>
+
+<h2>7. 你的权利（GDPR / CCPA / 其他）</h2>
+
+<p>你有权：</p>
+<ul>
+<li><strong>访问</strong>：请求我们持有的关于你的所有数据副本（免费，30 天内）</li>
+<li><strong>更正</strong>：纠正不准确的数据（使用 App 内编辑）</li>
+<li><strong>擦除</strong>：删除你的账户和所有相关数据（设置 → 账户）</li>
+<li><strong>限制</strong>：暂停 AI 处理（设置 → AI → 暂停 AI）</li>
+<li><strong>可携带</strong>：导出为 JSON</li>
+<li><strong>反对</strong>：选择退出分析（设置 → 隐私 → 禁用分析）</li>
+<li><strong>投诉</strong>：联系你当地的数据保护机构</li>
+</ul>
+
+<p>对加州居民（CCPA）：我们不出售或共享个人信息用于跨境行为广告。</p>
+
+<p>对欧盟/英国居民（GDPR）：我们的数据控制者是 Maaker.AI（联系方式见下）。我们不会在没有适当保障措施的情况下将欧盟数据传输到不充分的司法管辖区。</p>
+
+<h2>8. 儿童隐私</h2>
+
+<p>DementiaLog <strong>不适用于 18 岁以下用户</strong>。我们不会有意收集儿童数据。如果你未满 18 岁，请勿使用本服务。如果你认为儿童向我们提供了数据，请立即联系我们删除。</p>
+
+<h2>9. 政策变更</h2>
+
+<p>我们可能更新此政策。重大变更（新数据使用、新第三方）将通过以下方式通知：</p>
+<ul>
+<li>生效前 7 天 App 内通知</li>
+<li>邮件至你的账户邮箱</li>
+</ul>
+
+<p>生效日期后继续使用即视为接受。</p>
+
+<h2>10. 联系我们</h2>
+
+<ul>
+<li><strong>邮箱</strong>: privacy@maaker.cn</li>
+<li><strong>数据保护官（DPO）</strong>: privacy@maaker.cn</li>
+</ul>
+
+<p>如果你有我们无法解决的投诉，可以联系你当地的数据保护机构。</p>
+
+<div class="disclaimer">
+<strong>重要免责声明</strong>
+<p>DementiaLog 是<strong>个人观察日志和家庭沟通工具</strong>。它：</p>
+<ul>
+<li><strong>不是</strong>医疗器械</li>
+<li><strong>不</strong>替代专业医疗建议、诊断或治疗</li>
+<li><strong>不</strong>设计用于检测、诊断、治疗、治愈或预防任何疾病</li>
+</ul>
+<p>AI 摘要和行为预测基于你记录数据的模式。它们<strong>不是</strong>临床评估。请始终咨询合格的医疗保健专业人员以做出医疗决策。</p>
+<p>紧急情况下，请拨打当地紧急电话（美国 911、英国 999、中国 120）。</p>
+</div>
+
+<div class="footer">
+DementiaLog · Made with care by Maaker.AI · <a href="https://maaker.cn">maaker.cn</a><br>
+Bundle ID: ai.maaker.dementialog
+</div>
+
+</body>
+</html>
