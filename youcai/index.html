@@ -20,16 +20,19 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>有菜 隐私政策</h1>
-<p class="meta">最后更新：2026 年 4 月 20 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
+<p class="meta">最后更新：2026 年 6 月 8 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
 
-<p>有菜（YouCai）是一款冰箱蔬菜管理工具。我们秉持数据最小化原则：只收集运行 App 必需的数据，不做广告、不做画像、不做数据转卖。</p>
+<p>有菜（YouCai）是一款冰箱蔬菜管理工具。我们秉持数据最小化原则：只收集运行 App 必需的数据，不做广告、不做用户画像、不向数据经纪商出售或共享你的数据。本政策如实披露我们集成的全部第三方服务与数据流向。</p>
 
 <h2>1. 我们收集什么</h2>
 <ul>
 <li><strong>账号信息</strong>：你的邮箱地址（用于登录和数据同步）。不收集手机号、真实姓名、身份证号</li>
-<li><strong>蔬菜记录</strong>：你手动录入或拍照识别的蔬菜名称、数量、存放位置、入库日期、保质期</li>
+<li><strong>蔬菜与个人资料</strong>：你手动录入或拍照识别的蔬菜名称、数量、存放位置、入库日期、保质期，以及你设置的昵称、头像</li>
 <li><strong>消耗记录</strong>：你在 App 内记录的"我做了 / 丢掉了"行为日志</li>
 <li><strong>订阅状态</strong>：是否为 YouCai Pro 订阅用户（通过苹果和 RevenueCat 返回的匿名订阅凭据判断），不存储任何支付凭据</li>
+<li><strong>产品使用数据</strong>：你在 App 内点击的功能、浏览的页面等使用事件，以及一个用于区分设备的匿名标识符。用于了解功能使用情况、改进产品体验（经 PostHog，<strong>仅在你同意本隐私政策后才启用</strong>）</li>
+<li><strong>崩溃与诊断数据</strong>：App 崩溃或出错时的错误堆栈、设备型号、操作系统版本等技术信息，用于定位和修复问题（经 Sentry，<strong>仅在你同意本隐私政策后才启用</strong>）</li>
+<li><strong>推送标识</strong>：用于向你的设备发送通知的推送令牌（push token）。详见第 6 节</li>
 </ul>
 
 <h2>2. 不收集什么</h2>
@@ -37,38 +40,46 @@ a { color: #5A7A3E; }
 <li>不收集手机号</li>
 <li>不收集位置信息</li>
 <li>不收集通讯录、麦克风</li>
-<li>不收集设备标识（IMEI、IDFA、OAID 等）</li>
-<li>不集成任何广告 SDK、不做行为追踪</li>
+<li>不收集广告标识符（IDFA / IMEI / OAID），不用于任何广告投放</li>
+<li>不集成任何广告 SDK；不做跨应用、跨网站的追踪（不会因广告目的将你的身份提供给第三方）。上述产品分析与崩溃诊断均为我们自用、用于改进有菜本身，不与数据经纪商共享、不用于广告定向</li>
 </ul>
 
 <h2>3. AI 拍冰箱识别（关键）</h2>
-<p>当你使用 "拍一张" 功能时：</p>
+<p>当你使用 "拍一张" 功能时，照片会<strong>先在本地压缩到 1024px</strong>，再经我们的服务器一次性转发到 AI 网关完成视觉识别。按你所在地区不同：</p>
 <ul>
-<li>照片会<strong>压缩到 1024px</strong>后经我们的服务器（<code>recipe.tucao.art</code>，自运营）<strong>一次性转发到 OpenRouter AI 网关</strong>完成视觉识别</li>
+<li><strong>中国大陆</strong>：经我们自运营的服务器（<code>recipe.tucao.art</code>）转发到 OpenRouter AI 网关。参阅 <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter 隐私政策</a></li>
+<li><strong>其他国家/地区</strong>：经我们的 Supabase Edge Function 转发到 Google Gemini 完成识别</li>
 <li><strong>我们不留存照片</strong>：服务器端只在请求处理期间临时持有图片数据，响应完成立即丢弃，不写磁盘、不进日志、不入数据库</li>
-<li>OpenRouter 按其官方政策短期保留（用于安全审计）。如需详细条款请参阅 <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter 隐私政策</a></li>
 <li>识别结果（蔬菜名称、数量估计）由你确认入库后才写入数据库</li>
 <li>免费用户每日限 5 次识别，我们仅在 <code>ai_quota</code> 表保存调用次数计数用于频控</li>
 </ul>
 
 <h2>4. 数据存储在哪</h2>
-<p>你的账号和蔬菜记录存放在我们<strong>自托管的 Supabase 实例</strong>（<code>api.maaker.cn</code>，部署在国内机房，独立运维）。不走任何第三方云厂商的托管服务，不跨境传输你的数据。</p>
-<p>App 内通过行级安全策略（RLS）确保：每个用户只能读写自己的数据，其他用户无法访问。</p>
+<p>有菜按你的 App Store 所在国家/地区在首次启动时确定数据所属区域，之后保持稳定：</p>
+<ul>
+<li><strong>中国大陆用户</strong>：账号和蔬菜记录存放在我们<strong>自托管的 Supabase 实例</strong>（<code>api.maaker.cn</code>，部署在国内机房，独立运维）</li>
+<li><strong>其他国家/地区用户</strong>：数据存放在 <strong>Supabase Cloud</strong>（托管于境外，美国区）</li>
+</ul>
+<p>无论哪个区域，App 内均通过行级安全策略（RLS）确保：每个用户只能读写自己的数据，其他用户无法访问。</p>
 
 <h2>5. 第三方服务</h2>
 <ul>
 <li><strong>RevenueCat</strong>：处理订阅管理。只接触匿名订阅标识符和苹果返回的交易凭据，<strong>不接触邮箱或蔬菜数据</strong>。参阅 <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat 隐私政策</a></li>
 <li><strong>Apple App Store</strong>：处理所有内购支付。我们不接触你的信用卡或 Apple ID 密码</li>
-<li><strong>OpenRouter</strong>：仅在 AI 识别时被动调用（见第 3 节）</li>
+<li><strong>OpenRouter / Google Gemini</strong>：仅在 AI 识别时被动调用（见第 3 节）</li>
+<li><strong>PostHog</strong>：产品使用分析。收集匿名使用事件与设备标识，用于改进产品，不用于广告、不跨 App、不出售数据。仅在你同意本隐私政策后启用。参阅 <a href="https://posthog.com/privacy" target="_blank">PostHog 隐私政策</a></li>
+<li><strong>Sentry</strong>：崩溃与性能诊断。收集错误堆栈、设备型号、系统版本，用于修复问题。仅在你同意本隐私政策后启用。参阅 <a href="https://sentry.io/privacy/" target="_blank">Sentry 隐私政策</a></li>
+<li><strong>Firebase Cloud Messaging（Google）</strong>：向中国大陆以外用户的设备投递推送通知（见第 6 节）。参阅 <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策</a></li>
+<li><strong>阿里云 EMAS 移动推送</strong>：向中国大陆用户的设备投递推送通知（见第 6 节）。参阅 <a href="https://www.aliyun.com/legal/privacy" target="_blank">阿里云隐私政策</a></li>
 </ul>
 
 <h2>6. 推送通知</h2>
-<p>仅在你开启时启用：</p>
+<p>仅在你授予通知权限后启用。我们会发送以下两类提醒：</p>
 <ul>
-<li><strong>临期提醒</strong>：蔬菜剩余 3 天 / 1 天 / 当天在本地触发推送</li>
+<li><strong>临期提醒</strong>：蔬菜剩余 3 天 / 1 天 / 当天时提醒你优先处理</li>
 <li><strong>早市提醒</strong>：每天 7:00 可选提醒</li>
 </ul>
-<p>所有通知均为<strong>本地通知</strong>（由系统调度），不走任何推送服务器，也不会告诉我们你何时看了通知。</p>
+<p>为了在 App 未打开时也能准时提醒，这些通知通过<strong>远程推送服务</strong>投递：中国大陆用户经<strong>阿里云 EMAS</strong>，其他国家/地区用户经 <strong>Firebase Cloud Messaging → Apple APNs</strong>。为此我们会在你登录后向服务器注册一个设备推送令牌（push token），用于定向投递。你可以随时在系统设置或 App 内关闭通知。</p>
 
 <h2>7. 权限说明</h2>
 <ul>
@@ -80,7 +91,7 @@ a { color: #5A7A3E; }
 <h2>8. 数据导出和删除</h2>
 <ul>
 <li><strong>导出</strong>：在 "我的 &gt; 导出数据" 可一键导出你账号下所有蔬菜、消耗记录为 JSON 文件</li>
-<li><strong>删除账号</strong>：发送邮件至 <a href="mailto:support@maaker.cn">support@maaker.cn</a> 注明注销，我们在 7 天内彻底删除你的账号、蔬菜、消耗日志、配额记录</li>
+<li><strong>删除账号</strong>：发送邮件至 <a href="mailto:support@maaker.cn">support@maaker.cn</a> 注明注销，我们在 7 天内彻底删除你的账号、蔬菜、消耗日志、配额记录及推送令牌</li>
 <li>订阅记录保留到苹果/RevenueCat 侧自然过期；我们本地仅保留"曾经订阅过"的匿名计数</li>
 </ul>
 
