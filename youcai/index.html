@@ -20,7 +20,7 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>有菜 隐私政策</h1>
-<p class="meta">最后更新：2026 年 6 月 8 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
+<p class="meta">最后更新：2026 年 7 月 28 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
 
 <p>有菜（YouCai）是一款冰箱蔬菜管理工具。我们秉持数据最小化原则：只收集运行 App 必需的数据，不做广告、不做用户画像、不向数据经纪商出售或共享你的数据。本政策如实披露我们集成的全部第三方服务与数据流向。</p>
 
@@ -70,7 +70,9 @@ a { color: #5A7A3E; }
 <li><strong>PostHog</strong>：产品使用分析。收集匿名使用事件与设备标识，用于改进产品，不用于广告、不跨 App、不出售数据。仅在你同意本隐私政策后启用。参阅 <a href="https://posthog.com/privacy" target="_blank">PostHog 隐私政策</a></li>
 <li><strong>Sentry</strong>：崩溃与性能诊断。收集错误堆栈、设备型号、系统版本，用于修复问题。仅在你同意本隐私政策后启用。参阅 <a href="https://sentry.io/privacy/" target="_blank">Sentry 隐私政策</a></li>
 <li><strong>Firebase Cloud Messaging（Google）</strong>：向中国大陆以外用户的设备投递推送通知（见第 6 节）。参阅 <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策</a></li>
-<li><strong>阿里云 EMAS 移动推送</strong>：向中国大陆用户的设备投递推送通知（见第 6 节）。参阅 <a href="https://www.aliyun.com/legal/privacy" target="_blank">阿里云隐私政策</a></li>
+<li><strong>阿里云 EMAS 移动推送</strong>：向中国大陆用户的设备投递推送通知（见第 6 节）。该 SDK 初始化时会收集设备标识信息（Android ID / OAID 等）、网络状态信息及<strong>传感器信息（加速度传感器）</strong>，用于生成推送设备标识、保障消息准确触达与防刷安全风控。该 SDK 仅在你同意本隐私政策后才初始化。参阅 <a href="https://www.aliyun.com/legal/privacy" target="_blank">阿里云隐私政策</a></li>
+<li><strong>微信支付 SDK（腾讯）</strong>：仅在你主动发起微信支付时调用，SDK 不在 App 启动期注册。参阅 <a href="https://www.tencent.com/zh-cn/privacy-policy.html" target="_blank">腾讯隐私政策</a></li>
+<li><strong>支付宝 SDK（蚂蚁集团）</strong>：仅在你主动发起支付宝支付时调用。支付交易安全风控过程中会收集设备信息与<strong>传感器信息（加速度传感器）</strong>。参阅 <a href="https://render.alipay.com/p/c/k2cx0tg8" target="_blank">支付宝隐私政策</a></li>
 </ul>
 
 <h2>6. 推送通知</h2>
@@ -81,11 +83,19 @@ a { color: #5A7A3E; }
 </ul>
 <p>为了在 App 未打开时也能准时提醒，这些通知通过<strong>远程推送服务</strong>投递：中国大陆用户经<strong>阿里云 EMAS</strong>，其他国家/地区用户经 <strong>Firebase Cloud Messaging → Apple APNs</strong>。为此我们会在你登录后向服务器注册一个设备推送令牌（push token），用于定向投递。你可以随时在系统设置或 App 内关闭通知。</p>
 
-<h2>7. 权限说明</h2>
+<h2>7. 权限说明与设备信息</h2>
 <ul>
 <li><code>相机</code>：拍冰箱照片用于 AI 识别</li>
 <li><code>相册</code>：从相册选取已有照片用于 AI 识别</li>
 <li><code>通知</code>：临期和早市提醒（可在设置内关闭）</li>
+</ul>
+
+<p><strong>设备信息与传感器</strong></p>
+<ul>
+<li>有菜自身的功能<strong>不主动读取传感器数据</strong>，也不基于传感器做用户画像或行为分析</li>
+<li>上文第 5 节所述的<strong>推送 SDK（阿里云 EMAS）</strong>与<strong>支付 SDK（支付宝）</strong>，出于生成设备标识和支付安全风控的目的，会访问<strong>加速度传感器</strong>信息</li>
+<li>拍照时，系统相机组件会使用设备方向（基于加速度计）以校正照片的旋转方向</li>
+<li>以上所有访问均发生在你同意本隐私政策之后；在你同意之前，我们不会初始化上述任何第三方 SDK</li>
 </ul>
 
 <h2>8. 数据导出和删除</h2>

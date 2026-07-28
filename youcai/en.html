@@ -20,7 +20,7 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>YouCai Privacy Policy</h1>
-<p class="meta">Last updated: June 8, 2026 · Applies to YouCai for iOS (version 1.0.0 onward)</p>
+<p class="meta">Last updated: July 28, 2026 · Applies to YouCai for iOS (version 1.0.0 onward)</p>
 
 <p>YouCai is a fridge vegetable tracker. We follow data minimization: we collect only what is needed to run the app. No ads, no profiling, no selling or sharing your data with data brokers. This policy fully discloses every third-party service we integrate and how data flows.</p>
 
@@ -70,7 +70,9 @@ a { color: #5A7A3E; }
 <li><strong>PostHog</strong>: product usage analytics. Collects anonymous usage events and a device identifier to improve the product — no ads, no cross-app tracking, no data resale. Enabled only after you accept this privacy policy. See <a href="https://posthog.com/privacy" target="_blank">PostHog Privacy Policy</a></li>
 <li><strong>Sentry</strong>: crash and performance diagnostics. Collects error stack traces, device model, and OS version to fix problems. Enabled only after you accept this privacy policy. See <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></li>
 <li><strong>Firebase Cloud Messaging (Google)</strong>: delivers push notifications to devices outside mainland China (see section 6). See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></li>
-<li><strong>Alibaba Cloud EMAS Push</strong>: delivers push notifications to devices in mainland China (see section 6). See <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy" target="_blank">Alibaba Cloud Privacy Policy</a></li>
+<li><strong>Alibaba Cloud EMAS Push</strong>: delivers push notifications to devices in mainland China (see section 6). On initialization the SDK collects device identifiers (Android ID / OAID), network status, and <strong>sensor data (accelerometer)</strong> to generate a push device ID, ensure reliable delivery, and guard against abuse. It is initialized only after you accept this privacy policy. See <a href="https://www.alibabacloud.com/help/en/legal/latest/alibaba-cloud-international-website-privacy-policy" target="_blank">Alibaba Cloud Privacy Policy</a></li>
+<li><strong>WeChat Pay SDK (Tencent)</strong>: invoked only when you actively start a WeChat payment. The SDK is not registered at app launch. See <a href="https://www.tencent.com/zh-cn/privacy-policy.html" target="_blank">Tencent Privacy Policy</a></li>
+<li><strong>Alipay SDK (Ant Group)</strong>: invoked only when you actively start an Alipay payment. For transaction security and fraud prevention it collects device information and <strong>sensor data (accelerometer)</strong>. See <a href="https://render.alipay.com/p/c/k2cx0tg8" target="_blank">Alipay Privacy Policy</a></li>
 </ul>
 
 <h2>6. Notifications</h2>
@@ -81,11 +83,19 @@ a { color: #5A7A3E; }
 </ul>
 <p>So that reminders arrive on time even when the app is closed, these are delivered via <strong>remote push services</strong>: <strong>Alibaba Cloud EMAS</strong> for mainland China users, and <strong>Firebase Cloud Messaging → Apple APNs</strong> for users elsewhere. To deliver them, we register a device push token on our server after you sign in. You can turn notifications off anytime in system Settings or in-app.</p>
 
-<h2>7. Permissions</h2>
+<h2>7. Permissions and device information</h2>
 <ul>
 <li><code>Camera</code>: to take photos of your fridge for AI recognition</li>
 <li><code>Photo Library</code>: to pick existing photos for AI recognition</li>
 <li><code>Notifications</code>: expiry and morning reminders (toggleable in Settings)</li>
+</ul>
+
+<p><strong>Device information and sensors</strong></p>
+<ul>
+<li>YouCai's own features <strong>do not read sensor data</strong>, and we never use sensors for profiling or behavioral analysis</li>
+<li>The <strong>push SDK (Alibaba Cloud EMAS)</strong> and <strong>payment SDK (Alipay)</strong> described in section 5 access the <strong>accelerometer</strong> to generate a device identifier and for payment fraud prevention</li>
+<li>When you take a photo, the system camera component uses device orientation (derived from the accelerometer) to correct the photo's rotation</li>
+<li>All of the above happens only after you accept this privacy policy — we initialize none of these third-party SDKs before you do</li>
 </ul>
 
 <h2>8. Data export and deletion</h2>
