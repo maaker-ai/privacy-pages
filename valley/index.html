@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — 专注谷物语</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #2A2A1F; background: #FBFDF3; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #2A2A1F; }
+.meta { color: #7E8A6B; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #E7F0D4; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+a { color: #2F7A34; }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+th, td { border: 1px solid #DCE6C8; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #EDF5DD; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #DCE6C8; color: #7E8A6B; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>专注谷物语 隐私政策</h1>
+<p class="meta">最后更新：2026 年 8 月 8 日 · 适用于 专注谷物语 iOS / Android / HarmonyOS 版</p>
+
+<p>专注谷物语（Pvalley）是一款专注计时工具：你开始一次专注，就在山谷里种下一棵植物，专注结束植物长成。我们秉持数据最小化原则——只收集让 App 跑起来必需的数据，不做广告、不做用户画像、不向任何第三方出售你的数据。本政策如实披露我们集成的全部第三方 SDK 与数据流向。</p>
+
+<h2>1. 我们收集什么</h2>
+<ul>
+<li><strong>账号信息</strong>：你注册时填写的手机号<em>或</em>邮箱，以及密码（我们只保存 bcrypt 单向哈希，任何人包括我们都无法从中还原出你的密码）。若你选择第三方登录，我们从苹果 / 微信 / QQ / 华为账号处获得的是一个不可逆的用户标识，不是你在这些平台的账号密码</li>
+<li><strong>个人资料</strong>：你设置的昵称、形象（男孩 / 女孩两种卡通形象之一）、邀请码</li>
+<li><strong>专注记录</strong>：每次专注的主题标签（最长 7 个字，由你自己填写）、时长、开始与结束时间、使用的植物种子、是否为深度专注</li>
+<li><strong>虚拟资产</strong>：铃石余额、阳光灵蕴生效期、已获得的植物种子。这些是 App 内的虚拟道具，不涉及你的真实资金账户</li>
+<li><strong>推送标识</strong>：用于向你的设备发送通知的推送令牌。详见第 5 节</li>
+<li><strong>设备与版本信息</strong>：设备型号、操作系统版本、App 版本号。用于判断功能兼容性和推送更新提示</li>
+<li><strong>匿名使用统计</strong>：App 启动次数、页面访问等聚合统计（经友盟，<strong>仅在你同意本隐私政策之后才启用</strong>）</li>
+</ul>
+
+<h2>2. 不收集什么</h2>
+<ul>
+<li>不收集地理位置</li>
+<li>不读取通讯录、通话记录、短信</li>
+<li>不访问相册、相机、麦克风</li>
+<li>不读取剪贴板</li>
+<li>不申请「所有文件访问」等全盘存储权限</li>
+<li>不收集身份证号、银行卡号等身份与金融信息</li>
+</ul>
+
+<h2>3. 关于「专注锁应用」（重点说明）</h2>
+<p>深度专注模式可以在你专注期间暂时屏蔽你选定之外的应用。这个能力由操作系统提供——iOS 上是 <strong>Family Controls / 屏幕使用时间</strong>，HarmonyOS 上是 <strong>Screen Time Guard Kit</strong>。</p>
+<p>需要你知道的关键一点：<strong>你选择的应用名单，以系统给出的不透明令牌形式保存在你的设备本地，我们的 App 读不到具体是哪些应用，更不会上传。</strong>这不是我们的口头承诺，而是苹果与华为在系统层面的设计所保证的——App 拿到的就只是一串无法反查的标识。</p>
+<p>该权限完全可选，不授权也能正常使用普通专注。名单只在你本机生效，专注结束即解除。</p>
+
+<h2>4. 数据存储在哪</h2>
+<ul>
+<li><strong>你的设备本地</strong>：专注记录、已获得的种子、App 设置。即使不联网也能开始专注</li>
+<li><strong>我们的服务器</strong>：账号、个人资料、专注记录、虚拟资产。服务器位于<strong>中国境内</strong>（腾讯云），域名 <code>valley-api.maaker.cn</code>，全程 HTTPS 传输。我们不向境外传输你的个人信息</li>
+<li><strong>你的 iCloud（可选）</strong>：只有当你在「设定 → iCloud 资料备份」中主动打开时，备份才会写入<strong>你自己的</strong> iCloud 账户。我们无权访问你的 iCloud</li>
+</ul>
+
+<h2>5. 推送通知</h2>
+<p>推送分两类，请区分：</p>
+<ul>
+<li><strong>本地通知</strong>（如专注结束提醒）：由你的设备自己产生，不经过我们的服务器，不上传任何数据</li>
+<li><strong>远程推送</strong>：需要一个「推送令牌」来定位你的设备。iOS / Android 使用个推，HarmonyOS 使用华为 Push Kit。令牌是一串与你身份无关的设备标识，我们把它和你的账号关联起来，仅用于向你发送与本 App 有关的消息</li>
+</ul>
+<p>通知权限完全可选。我们不会在你刚打开 App 时就索要——只有在你<strong>第一次完成专注之后</strong>才会询问，那时「下次专注结束时提醒你」这个理由才成立。拒绝不影响任何核心功能。</p>
+
+<h2>6. 排行榜（默认关闭）</h2>
+<p>排行榜功能<strong>默认是关闭的</strong>。只有当你在「设定 → 开启排行」中主动打开，我们才会把你的昵称、形象和本周专注时长上传用于排名。关闭后不再上传。排名每周一 0 点重置。</p>
+
+<h2>7. 第三方 SDK 清单</h2>
+<p>以下是本 App 实际集成的全部第三方 SDK。凡是需要采集设备信息的，均<strong>在你同意本隐私政策之后</strong>才初始化。</p>
+<table>
+<tr><th>SDK</th><th>提供方</th><th>用途</th><th>可能获取的信息</th><th>平台</th></tr>
+<tr><td>个推 GTSDK</td><td>每日互动股份有限公司</td><td>消息推送</td><td>设备标识、网络状态、推送令牌</td><td>iOS / Android</td></tr>
+<tr><td>厂商推送通道<br>（华为 / 小米 / OPPO / vivo / 魅族）</td><td>各手机厂商</td><td>应用未运行时的离线消息送达</td><td>设备标识、推送令牌</td><td>Android</td></tr>
+<tr><td>华为 Push Kit</td><td>华为软件技术有限公司</td><td>消息推送</td><td>设备标识、推送令牌</td><td>HarmonyOS / Android</td></tr>
+<tr><td>友盟基础组件</td><td>友盟同欣（北京）科技有限公司</td><td>匿名使用统计</td><td>设备型号、系统版本、网络类型</td><td>iOS / Android</td></tr>
+<tr><td>微信开放平台 SDK</td><td>深圳市腾讯计算机系统有限公司</td><td>微信登录、分享、支付</td><td>设备标识、网络状态</td><td>iOS / Android</td></tr>
+<tr><td>腾讯 QQ 互联 SDK</td><td>深圳市腾讯计算机系统有限公司</td><td>QQ 登录</td><td>设备标识、网络状态</td><td>iOS / Android</td></tr>
+<tr><td>支付宝 SDK</td><td>支付宝（中国）网络技术有限公司</td><td>支付宝支付</td><td>设备标识、网络状态</td><td>iOS / Android</td></tr>
+<tr><td>Apple 内购 StoreKit</td><td>Apple Inc.</td><td>App 内购买</td><td>匿名购买凭据</td><td>iOS</td></tr>
+<tr><td>Sign in with Apple</td><td>Apple Inc.</td><td>苹果账号登录</td><td>匿名用户标识</td><td>iOS</td></tr>
+<tr><td>Apple MusicKit</td><td>Apple Inc.</td><td>播放你自己的 Apple Music 歌单</td><td>Apple Music 授权状态、歌单信息</td><td>iOS</td></tr>
+<tr><td>华为账号服务 / IAP</td><td>华为软件技术有限公司</td><td>华为账号登录、App 内购买</td><td>匿名用户标识、购买凭据</td><td>HarmonyOS</td></tr>
+</table>
+<p>上述第三方均须依其自身隐私政策处理你的信息。我们不会主动向其提供你的账号、专注记录等业务数据。</p>
+
+<h2>8. 权限说明</h2>
+<ul>
+<li><strong>通知</strong>（可选）：专注结束提醒。第一次完成专注后才询问</li>
+<li><strong>屏幕使用时间 / Family Controls</strong>（可选）：仅用于深度专注锁应用，见第 3 节</li>
+<li><strong>忽略电池优化</strong>（Android，可选）：防止专注计时被系统后台清理打断</li>
+</ul>
+<p>以上权限拒绝后 App 仍可正常使用，只是对应功能不可用。你可以随时在系统设置中撤回任何一项授权。</p>
+
+<h2>9. 数据查询、更正与删除</h2>
+<ul>
+<li><strong>查询与更正</strong>：昵称、形象、手机号、邮箱、密码均可在「设定 → 账户与安全」中查看和修改</li>
+<li><strong>删除单条记录</strong>：专注记录可在时间线中删除</li>
+<li><strong>注销账号</strong>：请发送邮件至 <a href="mailto:dramavision@163.com">dramavision@163.com</a>，标题写「注销账号」并附上你的注册手机号或邮箱。我们会在 15 个工作日内删除你的账号及关联的全部个人信息（法律法规要求留存的交易记录除外）。App 内的一键注销入口正在开发中，上线后本节会同步更新</li>
+</ul>
+
+<h2>10. 未成年人信息</h2>
+<p>本 App 不面向 14 周岁以下儿童。若你是未成年人，请在监护人陪同下阅读本政策并使用本 App。如我们发现在未事先获得监护人同意的情况下收集了儿童个人信息，会尽快删除。</p>
+
+<h2>11. 政策变更</h2>
+<p>本政策如有实质性变更，我们会在 App 内重新弹出确认，并更新本页顶部的「最后更新」日期。你可以拒绝新版政策，但那样我们将无法继续为你提供完整服务。</p>
+
+<h2>12. 联系我们</h2>
+<p>对本政策有任何疑问、或想行使上述任一项权利，请联系：<a href="mailto:dramavision@163.com">dramavision@163.com</a>。</p>
+<p>个人信息处理者：<strong>北京抓码视界科技有限公司</strong></p>
+
+<div class="footer">
+<p>专注谷物语 Pvalley · © 2026 北京抓码视界科技有限公司 · Bundle ID <code>top.dramavision.valley</code> · HarmonyOS <code>top.dramavision.valley.hm</code> · <a href="./terms.html">用户协议</a></p>
+</div>
+
+</body>
+</html>
