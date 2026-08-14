@@ -55,7 +55,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: August 14, 2026</p>
+        <p class="updated">Last updated: August 2026</p>
 
         <h2>Overview</h2>
         <p>Underhood is a macOS developer toolbox for managing launchd LaunchAgents, reclaiming developer disk space, and showing system information in widgets. It has no account system and no login. Everything you do in Underhood stays on your Mac. We operate no server that receives your data, and we do not collect, store, or transmit any personal information.</p>
@@ -95,6 +95,20 @@
             <li><a href="https://myip.ipip.net" target="_blank" rel="noopener">myip.ipip.net</a></li>
         </ul>
         <p>Making such a request necessarily reveals your IP address to the service being queried — that is precisely what the lookup is for. We send no other information with the request: no identifier, no account, no usage data. The result is displayed on your Mac only. We do not store it, log it, or forward it to us or anyone else. Each of these services handles requests under its own privacy policy; please refer to those policies if you have questions about them.</p>
+
+        <h2>Listening Ports (Dev Ports Widget)</h2>
+        <ul>
+            <li>Local port numbers that are currently listening</li>
+            <li>The name and process ID of the process holding each port</li>
+        </ul>
+        <p>Underhood reads this from macOS itself (the built-in <code>nettop</code> tool). It is stored in a shared App Group container so the widget can display it, and it never leaves your Mac.</p>
+
+        <h2>Developer Cache Sizes (Disk Cleanup and Reclaimable Space Widget)</h2>
+        <ul>
+            <li>The total size of each developer cache category, such as Xcode DerivedData, archives, simulator caches, and the caches behind SwiftPM, CocoaPods, npm, Homebrew and Gradle</li>
+            <li>The time of the last scan</li>
+        </ul>
+        <p>Only sizes are recorded, never file names or file contents. Scanning is read-only, the result is stored in a shared App Group container so the widget can display it, and it never leaves your Mac. Nothing is deleted unless you select it and confirm. Deleted files go to the Trash so you can restore them, with one exception: stale simulators are removed directly by macOS's <code>simctl</code> tool and cannot be restored.</p>
 
         <h2>Notifications</h2>
         <p>Underhood can show local notifications — for example when your public IP address changes, or to confirm that text was copied to the clipboard. These notifications are generated on your Mac by macOS. No push service is involved and no data is transmitted.</p>
