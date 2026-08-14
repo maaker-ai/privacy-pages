@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underhood - Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F7F8FA;
+            color: #1a1a2e;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .updated {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        ul {
+            margin: 0 0 16px 20px;
+        }
+        li {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        a { color: #1a6eb5; }
+        .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e5e7eb; color: #888; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: August 14, 2026</p>
+
+        <h2>Overview</h2>
+        <p>Underhood is a macOS developer toolbox for managing launchd LaunchAgents, reclaiming developer disk space, and showing system information in widgets. It has no account system and no login. Everything you do in Underhood stays on your Mac. We operate no server that receives your data, and we do not collect, store, or transmit any personal information.</p>
+
+        <h2>Data We Do Not Collect</h2>
+        <ul>
+            <li>No name, email address, phone number, or any other personal identifier.</li>
+            <li>No analytics, usage tracking, crash reporting, or advertising SDKs of any kind.</li>
+            <li>No telemetry. Underhood never reports what you open, click, or configure.</li>
+            <li>No device identifiers, and no profiles used to track you across apps or websites.</li>
+        </ul>
+
+        <h2>Data Storage</h2>
+        <p>All of your Underhood data is stored locally on your Mac:</p>
+        <ul>
+            <li><strong>UserDefaults</strong> — app preferences and your favorited services.</li>
+            <li><strong>App Groups</strong> — a shared local container used only so the widgets can read data collected by the main app on the same Mac.</li>
+        </ul>
+        <p>Nothing is uploaded to cloud services or external servers. Removing the app removes this data from your Mac.</p>
+
+        <h2>Files Underhood Reads on Your Mac</h2>
+        <p>To do its job, Underhood reads information from your own machine. All of it is processed locally and shown only to you:</p>
+        <ul>
+            <li><strong>LaunchAgent configuration</strong> — Underhood reads, creates, edits, and removes <code>.plist</code> files in your <code>~/Library/LaunchAgents</code> directory, and runs <code>launchctl</code> to load, unload, start, and stop those services.</li>
+            <li><strong>Developer caches and disk usage</strong> — the disk cleanup tool scans well-known developer cache locations (such as Xcode and package manager caches) to estimate reclaimable space. Nothing is deleted without your explicit confirmation, and confirmed items are moved to the Trash rather than erased.</li>
+            <li><strong>System information</strong> — disk capacity and locally listening development ports, used to render the widgets.</li>
+        </ul>
+        <p>This information is never transmitted anywhere.</p>
+
+        <h2>The Only Network Request We Make</h2>
+        <p>Underhood makes exactly one kind of outbound network request: looking up your own public IP address and its approximate country/region, for display in the Network Info widget.</p>
+        <p>To stay reliable when one provider is rate-limited, Underhood tries several public IP lookup services in turn until one responds:</p>
+        <ul>
+            <li><a href="https://api.myip.com" target="_blank" rel="noopener">api.myip.com</a></li>
+            <li><a href="https://ifconfig.co" target="_blank" rel="noopener">ifconfig.co</a></li>
+            <li><a href="https://ipinfo.io" target="_blank" rel="noopener">ipinfo.io</a></li>
+            <li><a href="https://myip.ipip.net" target="_blank" rel="noopener">myip.ipip.net</a></li>
+        </ul>
+        <p>Making such a request necessarily reveals your IP address to the service being queried — that is precisely what the lookup is for. We send no other information with the request: no identifier, no account, no usage data. The result is displayed on your Mac only. We do not store it, log it, or forward it to us or anyone else. Each of these services handles requests under its own privacy policy; please refer to those policies if you have questions about them.</p>
+
+        <h2>Notifications</h2>
+        <p>Underhood can show local notifications — for example when your public IP address changes, or to confirm that text was copied to the clipboard. These notifications are generated on your Mac by macOS. No push service is involved and no data is transmitted.</p>
+
+        <h2>Data Sharing</h2>
+        <p>We do not sell, rent, or share your data, because we do not have it. No third party receives information from Underhood other than the IP lookup service described above, which receives only the request itself.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>Underhood is a developer utility and is not directed at children. It does not knowingly collect personal information from anyone, including children under 13.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated date.</p>
+
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, please contact us at <a href="mailto:support@dramavision.top">support@dramavision.top</a>.</p>
+
+        <p class="footer">Underhood - Dev Toolbox · <a href="./support.html">Support</a> · Beijing Dramavision Technology Co., Ltd.</p>
+    </div>
+</body>
+</html>

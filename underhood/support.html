@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Underhood - Dev Toolbox</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #222; background: #F7F8FA; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #333; }
+h3 { font-size: 16px; margin-top: 20px; color: #333; }
+.meta { color: #888; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+a { color: #1a6eb5; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #eceef2; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #ddd; color: #888; font-size: 13px; }
+.qa { margin: 16px 0; padding: 16px 20px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
+.qa h3 { margin-top: 0; }
+</style>
+</head>
+<body>
+
+<h1>Underhood Support</h1>
+<p class="meta">Last updated: August 14, 2026</p>
+
+<p>Underhood - Dev Toolbox is a macOS app for developers. It manages your launchd LaunchAgents, helps you reclaim disk space taken by developer caches, and puts useful system information in Notification Center widgets. All of your data stays on your Mac. This page covers frequently asked questions and how to reach us.</p>
+
+<h2>Requirements</h2>
+<ul>
+<li>macOS 15.0 or later.</li>
+<li>Apple silicon or Intel Mac.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="qa">
+<h3>What can Underhood do?</h3>
+<ul>
+<li><b>LaunchAgent management</b> — browse the services in <code>~/Library/LaunchAgents</code> and everything <code>launchctl</code> reports, then load, unload, start, stop, or restart them. You can edit a service with a visual form or edit its raw plist.</li>
+<li><b>Disk cleanup</b> — scan common developer cache locations (Xcode, package managers, and similar), review what was found, and move the items you select to the Trash.</li>
+<li><b>Widgets</b> — network info (public IP and region), favorited service status, disk space, reclaimable space, and locally listening development ports.</li>
+</ul>
+</div>
+
+<div class="qa">
+<h3>Where is my data stored?</h3>
+<p>Everything stays on your Mac. Preferences and favorites are kept in UserDefaults, and a shared local App Group container lets the widgets read data gathered by the main app. There is no account, no login, and nothing is uploaded to a server. See the <a href="./">Privacy Policy</a> for details.</p>
+</div>
+
+<div class="qa">
+<h3>A widget shows stale data, or a dash instead of a value.</h3>
+<p>The widgets run in a sandboxed extension and cannot gather system data themselves — the main app collects it and shares it locally. If a widget looks out of date, open Underhood once so it can refresh the shared data, then give the widget a moment to reload. macOS also decides when widgets are allowed to refresh, so short delays are normal.</p>
+</div>
+
+<div class="qa">
+<h3>The Network Info widget cannot show my public IP.</h3>
+<p>The public IP is fetched from free third-party lookup services, which sometimes rate-limit requests. Underhood falls back across several providers and caches the last known result, so this is usually temporary. Check that your Mac is online, then try again in a few minutes.</p>
+</div>
+
+<div class="qa">
+<h3>Is the disk cleanup safe?</h3>
+<p>Nothing is removed without you selecting it and confirming. Confirmed items are moved to the Trash rather than erased, so you can restore them until you empty the Trash. Cleanup is restricted to a whitelist of known developer cache locations, and symlinks are not followed out of those locations. Some caches will be rebuilt by their tools the next time you use them, which is expected — that is what a cache is for.</p>
+</div>
+
+<div class="qa">
+<h3>A service will not start, or immediately exits.</h3>
+<p>Open the service in Underhood and check its last exit status, then check the program path and arguments in the editor — a wrong path or a missing executable is the most common cause. If your service depends on tools installed via a shell environment, make sure the required environment variables are set in the service configuration; Underhood can import the variables from your login shell for you. Finally, check the service's own log files at the paths configured in its plist.</p>
+</div>
+
+<div class="qa">
+<h3>Does Underhood have in-app purchases or a subscription?</h3>
+<p>No. Underhood has no in-app purchases and no subscriptions. If you purchased the app on the App Store and need a refund, purchases are handled by Apple: visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> and sign in with the Apple Account used for the purchase. As developers we cannot directly refund payments collected by Apple.</p>
+</div>
+
+<h2>Contact Us</h2>
+<p>For bug reports, feature requests or any other help:</p>
+<ul>
+<li>Email: <a href="mailto:support@dramavision.top">support@dramavision.top</a></li>
+<li>We usually reply within 72 hours on business days.</li>
+<li>It helps a lot if you include your macOS version and, where relevant, the label of the service involved.</li>
+</ul>
+
+<h2>Related Pages</h2>
+<ul>
+<li><a href="./">Privacy Policy</a></li>
+</ul>
+
+<p class="footer">Underhood - Dev Toolbox · maaker.ai · Beijing Dramavision Technology Co., Ltd.</p>
+
+</body>
+</html>
