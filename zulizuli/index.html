@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隐私政策 — ZuliZuli</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; line-height: 1.75; color: #2A1F14; background: #FBFAF5; }
+h1 { font-size: 28px; margin-bottom: 8px; }
+h2 { font-size: 20px; margin-top: 32px; color: #2A1F14; }
+.meta { color: #8A7A68; font-size: 14px; margin-bottom: 32px; }
+p { margin: 12px 0; }
+ul { padding-left: 24px; }
+li { margin: 6px 0; }
+code { background: #EDE5D0; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+a { color: #5A7A3E; }
+.hl { background: #EDF3E3; border-left: 3px solid #5A7A3E; padding: 12px 16px; margin: 16px 0; }
+.footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5DDC8; color: #8A7A68; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<h1>ZuliZuli 隐私政策</h1>
+<p class="meta">最后更新：2026 年 8 月 24 日 · 适用于 ZuliZuli iOS 版（版本 1.0 起）</p>
+
+<p>ZuliZuli 是一款面向小品牌主理人的事务安排工具，帮你记录市集筹备、物料下单、主办方规则和日程提醒，整理出每天必须推动的事项。我们只收集运行 App 必需的数据：<strong>不接入任何第三方 SDK、不投广告、不做用户画像、不向任何第三方出售或共享你的数据</strong>。</p>
+
+<div class="hl">
+<p><strong>先说最重要的一条：你的图片不会离开你的手机。</strong>截图里的文字识别（OCR）由 iOS 系统的 Vision 框架<strong>在你手机本地</strong>完成，我们的服务器只收到识别出来的文字，<strong>原图从头到尾不上传</strong>——这不是一个可以被关掉的开关，而是架构：服务端根本没有接收图片的接口。</p>
+</div>
+
+<h2>1. 我们收集什么</h2>
+<ul>
+<li><strong>账号标识</strong>：你通过 Apple 登录（Sign in with Apple）时苹果返回的用户标识，或你用于邮箱登录的邮箱地址。不收集手机号、真实姓名、身份证号</li>
+<li><strong>你主动记下的内容</strong>：你输入的文字速记、任务、日程、市集与工厂相关的备注，以及你通过系统分享面板分享进来的文字</li>
+<li><strong>图片识别出的文字</strong>：见下方第 3 节。<strong>只有文字，没有图片</strong></li>
+<li><strong>推送标识</strong>：用于向你的设备投递提醒通知的 APNs 推送令牌（push token）</li>
+</ul>
+
+<h2>2. 不收集什么</h2>
+<ul>
+<li>不收集手机号</li>
+<li>不收集位置信息</li>
+<li>不收集通讯录、麦克风、健康数据</li>
+<li>不收集 IDFA；不做广告归因，不做跨应用或跨网站追踪</li>
+<li>不集成任何第三方 SDK——不接广告 SDK，也不接第三方统计分析或崩溃上报服务。客户端只使用 Apple 的系统框架</li>
+<li><strong>不上传你的图片原文件</strong>（见第 3 节）</li>
+</ul>
+
+<h2>3. 图片与端上识别（关键）</h2>
+<p>你的材料很多是截图：工厂报价、主办方规则、供应商聊天记录。这些内容对生意本身是敏感的，所以 ZuliZuli 的处理方式是：</p>
+<ul>
+<li><strong>识别在你手机上完成</strong>：使用 iOS 系统内置的 Vision 文字识别框架进行本地 OCR，全过程不联网</li>
+<li><strong>只有识别出的文字被上传</strong>到我们的服务器，用于生成任务、日程和提醒</li>
+<li><strong>原图保留在你自己的手机里</strong>：为了让你事后能图文对照核对（OCR 对数字和排版有可能出错），App 会在本机的应用容器内保存一份压缩后的副本。这份副本只存在你的设备上，会随你自己的 iCloud 设备备份一起备份，<strong>不经过我们任何一台服务器</strong></li>
+<li>你可以在 App 内删除这些本地副本；卸载 App 时它们随应用容器一并被系统删除</li>
+</ul>
+
+<h2>4. 数据存储在哪</h2>
+<p>你的账号与文字内容存放在我们<strong>自运营的服务器</strong>（域名 <code>concierge.tucao.art</code>，部署在中国大陆机房，由我们独立运维），不使用第三方云笔记或第三方数据库服务承载你的内容。</p>
+<p>传输过程全程使用 HTTPS 加密。服务端按账号隔离，每个账号只能读写自己的数据。</p>
+
+<h2>5. 第三方服务</h2>
+<ul>
+<li><strong>Apple（Sign in with Apple）</strong>：处理登录身份验证。我们只接触苹果返回的用户标识，不接触你的 Apple ID 密码。参阅 <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple 隐私政策</a></li>
+<li><strong>Apple 推送通知服务（APNs）</strong>：投递提醒通知（见第 6 节）</li>
+</ul>
+<p>除上述 Apple 系统服务外，<strong>ZuliZuli 不接入任何其他第三方服务</strong>：没有广告网络、没有第三方统计分析、没有崩溃上报服务、没有第三方支付 SDK。</p>
+
+<h2>6. 推送通知</h2>
+<p>仅在你授予通知权限后启用。ZuliZuli 的核心价值就是"该动的时候叫你一声"，所以提醒通知是主要功能而非营销手段。我们发送的通知内容限于：你自己记下的事项的到期与前置提醒、需要你推动的事项汇总。</p>
+<p>为了在 App 未打开时也能准时提醒，通知经 <strong>Apple APNs</strong> 投递，我们会在你登录后向服务器注册设备推送令牌用于定向投递。你可以随时在系统设置或 App 内关闭通知。我们<strong>不会用推送发送广告或第三方推广内容</strong>。</p>
+
+<h2>7. 权限说明</h2>
+<ul>
+<li><code>通知</code>：投递你自己事项的提醒（可在系统设置内随时关闭）</li>
+<li><code>相册</code>：用于发现你新截的图并在本地识别成文字。如第 3 节所述，<strong>图片只在手机本地识别，不会上传</strong>。拒绝此权限不影响其他功能，你仍可手动输入或通过分享面板导入文字</li>
+</ul>
+<p>ZuliZuli 不申请定位、麦克风、通讯录权限，也不读取传感器数据做用户画像。</p>
+
+<h2>8. 数据保留、查询、更正与删除</h2>
+<ul>
+<li><strong>保留期限</strong>：你记下的内容会一直保留，直到你自己删除或注销账号——"记过的东西不丢"是这款 App 的基本承诺，所以我们不会主动清理你的历史记录</li>
+<li><strong>查询与更正</strong>：你在 App 内可以查看和修改自己记录的全部内容</li>
+<li><strong>删除单条内容</strong>：在 App 内直接删除</li>
+<li><strong>注销账号</strong>：发送邮件至 <a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a> 并注明注销，我们在 7 天内彻底删除你的账号、全部文字内容与推送令牌。本机的图片副本请在你的设备上自行删除或卸载 App</li>
+<li>如需一份你的数据副本，可通过同一邮箱提出，我们会以结构化文件形式提供</li>
+</ul>
+
+<h2>9. 数据安全</h2>
+<p>传输层使用 HTTPS；服务端登录凭据以令牌形式保存在 iOS 系统钥匙串（Keychain）中，不以明文写入文件；服务端按账号做访问隔离。我们不会要求你在 App 内提供银行卡、支付密码等信息，ZuliZuli 也不包含任何支付功能。</p>
+
+<h2>10. 儿童信息</h2>
+<p>ZuliZuli 面向经营者使用，不针对 14 岁以下儿童设计，也不主动收集儿童个人信息。</p>
+
+<h2>11. 政策变更</h2>
+<p>如未来版本调整数据处理方式，我们会在 App 内提示并在本页面更新。涉及收集范围扩大的重大变更，会在下一次启动时请你重新确认后才生效。</p>
+
+<h2>12. 联系我们</h2>
+<p>如有任何疑问，或需要行使查询 / 更正 / 删除 / 注销等权利：</p>
+<ul>
+<li>邮箱：<a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a></li>
+<li>运营主体：北京抓码视界科技有限公司</li>
+</ul>
+
+<div class="footer">
+<p>ZuliZuli · © 2026 北京抓码视界科技有限公司 · Bundle ID <code>ai.maaker.concierge</code> · <a href="./terms.html">服务协议</a></p>
+</div>
+
+</body>
+</html>
