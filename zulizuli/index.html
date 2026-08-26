@@ -15,26 +15,30 @@ li { margin: 6px 0; }
 code { background: #EDE5D0; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
 a { color: #5A7A3E; }
 .hl { background: #EDF3E3; border-left: 3px solid #5A7A3E; padding: 12px 16px; margin: 16px 0; }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 14px; }
+th, td { border: 1px solid #E5DDC8; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: #F2EDDF; font-weight: 600; }
 .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5DDC8; color: #8A7A68; font-size: 13px; }
 </style>
 </head>
 <body>
 
 <h1>ZuliZuli 隐私政策</h1>
-<p class="meta">最后更新：2026 年 8 月 24 日 · 适用于 ZuliZuli iOS 版（版本 1.0 起）</p>
+<p class="meta">最后更新：2026 年 8 月 26 日 · 适用于 ZuliZuli iOS 版与 HarmonyOS 版（版本 1.0 起）</p>
 
-<p>ZuliZuli 是一款面向小品牌主理人的事务安排工具，帮你记录市集筹备、物料下单、主办方规则和日程提醒，整理出每天必须推动的事项。我们只收集运行 App 必需的数据：<strong>不接入任何第三方 SDK、不投广告、不做用户画像、不向任何第三方出售或共享你的数据</strong>。</p>
+<p>ZuliZuli 是一款面向小品牌主理人的事务安排工具，帮你记录市集筹备、物料下单、主办方规则和日程提醒，整理出每天必须推动的事项。我们只收集运行 App 必需的数据：<strong>不接入任何第三方统计、广告或崩溃上报 SDK，不投广告、不做用户画像、不向任何第三方出售或共享你的数据</strong>。</p>
 
 <div class="hl">
-<p><strong>先说最重要的一条：你的图片不会离开你的手机。</strong>截图里的文字识别（OCR）由 iOS 系统的 Vision 框架<strong>在你手机本地</strong>完成，我们的服务器只收到识别出来的文字，<strong>原图从头到尾不上传</strong>——这不是一个可以被关掉的开关，而是架构：服务端根本没有接收图片的接口。</p>
+<p><strong>先说最重要的一条：你的图片不会离开你的手机。</strong>截图里的文字识别（OCR）<strong>在你手机本地</strong>完成——iOS 版用系统的 Vision 框架，HarmonyOS 版用系统的 Core Vision Kit——我们的服务器只收到识别出来的文字，<strong>原图从头到尾不上传</strong>。这不是一个可以被关掉的开关，而是架构：服务端根本没有接收图片的接口。你分享进来的 PDF 同样只上传文字。</p>
 </div>
 
 <h2>1. 我们收集什么</h2>
 <ul>
-<li><strong>账号标识</strong>：你通过 Apple 登录（Sign in with Apple）时苹果返回的用户标识，或你用于邮箱登录的邮箱地址。不收集手机号、真实姓名、身份证号</li>
+<li><strong>账号标识</strong>：三选一，取决于你用哪种方式登录——用于邮箱登录的邮箱地址；或 Apple 登录（Sign in with Apple）时苹果返回的用户标识；或华为账号登录时华为返回的用户标识（UnionID）。<strong>仅用于认出你是谁</strong>，不收集手机号、真实姓名、身份证号</li>
 <li><strong>你主动记下的内容</strong>：你输入的文字速记、任务、日程、市集与工厂相关的备注，以及你通过系统分享面板分享进来的文字</li>
-<li><strong>图片识别出的文字</strong>：见下方第 3 节。<strong>只有文字，没有图片</strong></li>
-<li><strong>推送标识</strong>：用于向你的设备投递提醒通知的 APNs 推送令牌（push token）</li>
+<li><strong>图片与 PDF 识别出的文字</strong>：见下方第 3 节。<strong>只有文字，没有原文件</strong></li>
+<li><strong>推送令牌</strong>：用于向你的设备投递提醒通知的推送标识（iOS 为 APNs token，HarmonyOS 为华为 Push Token）</li>
+<li><strong>设备安装标识</strong>：App 首次安装时在本机生成的一串随机数（我们称为 install_id），以及该设备所属平台（<code>ios</code> / <code>harmony</code>）。它<strong>只用于把推送令牌归属到正确的设备</strong>——没有它，服务端无法区分"你在同一台手机上换了个账号登录"和"别人拿到了这台手机的推送令牌"，而这两件事必须被区别对待。它是随机生成的，不含任何设备硬件信息，也不能反查到你</li>
 </ul>
 
 <h2>2. 不收集什么</h2>
@@ -42,61 +46,80 @@ a { color: #5A7A3E; }
 <li>不收集手机号</li>
 <li>不收集位置信息</li>
 <li>不收集通讯录、麦克风、健康数据</li>
-<li>不收集 IDFA；不做广告归因，不做跨应用或跨网站追踪</li>
-<li>不集成任何第三方 SDK——不接广告 SDK，也不接第三方统计分析或崩溃上报服务。客户端只使用 Apple 的系统框架</li>
-<li><strong>不上传你的图片原文件</strong>（见第 3 节）</li>
+<li>不收集设备硬件标识（IDFA / OAID / IMEI / OpenUDID 等）；不做广告归因，不做跨应用或跨网站追踪</li>
+<li>不集成任何第三方统计分析、广告或崩溃上报 SDK。客户端只调用设备厂商提供的系统能力（见第 6 节清单）</li>
+<li><strong>不上传你的图片与 PDF 原文件</strong>（见第 3 节）</li>
 </ul>
 
-<h2>3. 图片与端上识别（关键）</h2>
-<p>你的材料很多是截图：工厂报价、主办方规则、供应商聊天记录。这些内容对生意本身是敏感的，所以 ZuliZuli 的处理方式是：</p>
+<h2>3. 图片、PDF 与端上识别（关键）</h2>
+<p>你的材料很多是截图和文件：工厂报价、主办方规则、供应商聊天记录。这些内容对生意本身是敏感的，所以 ZuliZuli 的处理方式是：</p>
 <ul>
-<li><strong>识别在你手机上完成</strong>：使用 iOS 系统内置的 Vision 文字识别框架进行本地 OCR，全过程不联网</li>
+<li><strong>识别在你手机上完成</strong>：iOS 版使用系统内置的 Vision 文字识别框架，HarmonyOS 版使用系统内置的 Core Vision Kit，全过程不联网</li>
 <li><strong>只有识别出的文字被上传</strong>到我们的服务器，用于生成任务、日程和提醒</li>
-<li><strong>原图保留在你自己的手机里</strong>：为了让你事后能图文对照核对（OCR 对数字和排版有可能出错），App 会在本机的应用容器内保存一份压缩后的副本。这份副本只存在你的设备上，会随你自己的 iCloud 设备备份一起备份，<strong>不经过我们任何一台服务器</strong></li>
+<li><strong>PDF 同样如此</strong>：主办方规则一类的 PDF 在你的设备上被提取或渲染识别成文字，只有文字上传，原文件不上传</li>
+<li><strong>原图保留在你自己的手机里</strong>：为了让你事后能图文对照核对（OCR 对数字和排版有可能出错），App 会在本机的应用容器内保存一份压缩后的副本。这份副本只存在你的设备上（iOS 上会随你自己的 iCloud 设备备份一起备份），<strong>不经过我们任何一台服务器</strong></li>
 <li>你可以在 App 内删除这些本地副本；卸载 App 时它们随应用容器一并被系统删除</li>
 </ul>
 
-<h2>4. 数据存储在哪</h2>
-<p>你的账号与文字内容存放在我们<strong>自运营的服务器</strong>（域名 <code>concierge.tucao.art</code>，部署在中国大陆机房，由我们独立运维），不使用第三方云笔记或第三方数据库服务承载你的内容。</p>
+<h2>4. 好友托付：唯一一处内容会到别人那里</h2>
+<p>ZuliZuli 有一个「托付」功能：你可以把一件事交给你的好友，由<strong>他自己的手机</strong>去提醒他。这是本 App 中唯一一处你的内容会离开你自己账本的场景，所以单列说明：</p>
+<ul>
+<li><strong>只有你主动选中并递送的那一条文字</strong>（以及你为它设置的日期，如果你设了）会进入对方账本。你的其他记录、任务、日程一概不会被对方看到</li>
+<li><strong>递交即归属转移</strong>：这条事从此属于对方，由对方的提醒机器接管。你之后收到的只有三种回执——已送达、对方退回了、对方做完了</li>
+<li><strong>不会把你的身份信息透露给对方</strong>：我们不会向对方提供你的邮箱、真实姓名或 Apple / 华为账号标识。对方在他那边看到的名字，是<strong>他自己</strong>给你起的备注</li>
+<li><strong>加好友只能通过一次性邀请码</strong>，需要你把码主动发给对方。App 不提供按姓名、邮箱或手机号搜索用户的功能，别人无法通过这些信息找到你</li>
+<li><strong>解除好友不会收回已经递送出去的内容</strong>——归属在递交那一刻就转移了。解除后双方只是不再互相发送回执</li>
+</ul>
+<p>除此之外，我们<strong>不会</strong>因任何商业目的向第三方提供、共享、转让或公开你的个人信息。法律法规另有强制性规定的除外。</p>
+
+<h2>5. 数据存储在哪</h2>
+<p>你的账号与文字内容存放在我们<strong>自运营的服务器</strong>（域名 <code>concierge.tucao.art</code>，部署在<strong>中国大陆境内</strong>机房，由我们独立运维），不使用第三方云笔记或第三方数据库服务承载你的内容，也不向境外传输你的个人信息。</p>
 <p>传输过程全程使用 HTTPS 加密。服务端按账号隔离，每个账号只能读写自己的数据。</p>
 
-<h2>5. 第三方服务</h2>
-<ul>
-<li><strong>Apple（Sign in with Apple）</strong>：处理登录身份验证。我们只接触苹果返回的用户标识，不接触你的 Apple ID 密码。参阅 <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple 隐私政策</a></li>
-<li><strong>Apple 推送通知服务（APNs）</strong>：投递提醒通知（见第 6 节）</li>
-</ul>
-<p>除上述 Apple 系统服务外，<strong>ZuliZuli 不接入任何其他第三方服务</strong>：没有广告网络、没有第三方统计分析、没有崩溃上报服务、没有第三方支付 SDK。</p>
+<h2>6. 第三方 SDK 与系统服务清单</h2>
+<p>ZuliZuli 只调用设备厂商（Apple / 华为）提供的系统能力，逐项列出如下：</p>
+<table>
+<tr><th>名称</th><th>提供方</th><th>用途</th><th>涉及的信息</th></tr>
+<tr><td>Sign in with Apple</td><td>Apple（iOS 版）</td><td>登录身份验证</td><td>苹果返回的用户标识。不接触你的 Apple ID 密码</td></tr>
+<tr><td>Apple 推送通知服务（APNs）</td><td>Apple（iOS 版）</td><td>投递提醒通知</td><td>APNs 推送令牌</td></tr>
+<tr><td>Vision 文字识别</td><td>Apple（iOS 版）</td><td>端侧 OCR</td><td>不联网，不涉及任何信息外传</td></tr>
+<tr><td>华为账号服务（Account Kit）</td><td>华为（HarmonyOS 版）</td><td>登录身份验证</td><td>华为返回的用户标识（UnionID）。不接触你的华为账号密码</td></tr>
+<tr><td>华为推送服务（Push Kit）</td><td>华为（HarmonyOS 版）</td><td>投递提醒通知</td><td>华为 Push Token</td></tr>
+<tr><td>Core Vision Kit 文字识别</td><td>华为（HarmonyOS 版）</td><td>端侧 OCR</td><td>不联网，不涉及任何信息外传</td></tr>
+</table>
+<p>除上述系统服务外，<strong>ZuliZuli 不接入任何其他第三方服务</strong>：没有广告网络、没有第三方统计分析、没有崩溃上报服务、没有第三方支付 SDK。相关服务的数据处理另见 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a> 与 <a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank" rel="noopener">华为隐私政策</a>。</p>
 
-<h2>6. 推送通知</h2>
-<p>仅在你授予通知权限后启用。ZuliZuli 的核心价值就是"该动的时候叫你一声"，所以提醒通知是主要功能而非营销手段。我们发送的通知内容限于：你自己记下的事项的到期与前置提醒、需要你推动的事项汇总。</p>
-<p>为了在 App 未打开时也能准时提醒，通知经 <strong>Apple APNs</strong> 投递，我们会在你登录后向服务器注册设备推送令牌用于定向投递。你可以随时在系统设置或 App 内关闭通知。我们<strong>不会用推送发送广告或第三方推广内容</strong>。</p>
+<h2>7. 推送通知</h2>
+<p>仅在你授予通知权限后启用。ZuliZuli 的核心价值就是"该动的时候叫你一声"，所以提醒通知是主要功能而非营销手段。我们发送的通知内容限于：你自己记下的事项的到期与前置提醒、需要你推动的事项汇总、以及好友托付的三种回执。</p>
+<p>为了在 App 未打开时也能准时提醒，通知经 <strong>Apple APNs</strong>（iOS 版）或 <strong>华为 Push Kit</strong>（HarmonyOS 版）投递，我们会在你登录后向服务器注册设备推送令牌用于定向投递。你可以随时在系统设置或 App 内关闭通知；退出登录时我们会主动注销这台设备的推送令牌。我们<strong>不会用推送发送广告或第三方推广内容</strong>。</p>
 
-<h2>7. 权限说明</h2>
+<h2>8. 权限说明</h2>
 <ul>
-<li><code>通知</code>：投递你自己事项的提醒（可在系统设置内随时关闭）</li>
-<li><code>相册</code>：用于发现你新截的图并在本地识别成文字。如第 3 节所述，<strong>图片只在手机本地识别，不会上传</strong>。拒绝此权限不影响其他功能，你仍可手动输入或通过分享面板导入文字</li>
+<li><code>通知</code>：投递你自己事项的提醒（两个平台均适用，可在系统设置内随时关闭）</li>
+<li><code>相册</code>（<strong>仅 iOS 版</strong>）：用于发现你新截的图并在本地识别成文字。如第 3 节所述，<strong>图片只在手机本地识别，不会上传</strong>。拒绝此权限不影响其他功能，你仍可手动输入或通过分享面板导入文字</li>
+<li><strong>HarmonyOS 版不申请相册权限</strong>：它使用系统提供的「最近截图」组件，由系统只把你刚截的那一张递到 App 面前，App 无法看到你相册里的任何其他内容</li>
 </ul>
 <p>ZuliZuli 不申请定位、麦克风、通讯录权限，也不读取传感器数据做用户画像。</p>
 
-<h2>8. 数据保留、查询、更正与删除</h2>
+<h2>9. 数据保留、查询、更正与删除</h2>
 <ul>
 <li><strong>保留期限</strong>：你记下的内容会一直保留，直到你自己删除或注销账号——"记过的东西不丢"是这款 App 的基本承诺，所以我们不会主动清理你的历史记录</li>
 <li><strong>查询与更正</strong>：你在 App 内可以查看和修改自己记录的全部内容</li>
 <li><strong>删除单条内容</strong>：在 App 内直接删除</li>
-<li><strong>注销账号</strong>：发送邮件至 <a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a> 并注明注销，我们在 7 天内彻底删除你的账号、全部文字内容与推送令牌。本机的图片副本请在你的设备上自行删除或卸载 App</li>
+<li><strong>注销账号</strong>：发送邮件至 <a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a> 并注明注销，我们在 7 天内彻底删除你的账号、全部文字内容、推送令牌与设备安装标识。本机的图片副本请在你的设备上自行删除或卸载 App。已经托付给好友的事项属于对方账本，需由对方自行删除</li>
 <li>如需一份你的数据副本，可通过同一邮箱提出，我们会以结构化文件形式提供</li>
 </ul>
 
-<h2>9. 数据安全</h2>
-<p>传输层使用 HTTPS；服务端登录凭据以令牌形式保存在 iOS 系统钥匙串（Keychain）中，不以明文写入文件；服务端按账号做访问隔离。我们不会要求你在 App 内提供银行卡、支付密码等信息，ZuliZuli 也不包含任何支付功能。</p>
+<h2>10. 数据安全</h2>
+<p>传输层使用 HTTPS；服务端登录凭据以令牌形式保存在系统的加密存储中（iOS 为钥匙串 Keychain，HarmonyOS 为关键资产 Asset），不以明文写入文件、不进入普通应用备份；服务端按账号做访问隔离。我们不会要求你在 App 内提供银行卡、支付密码等信息，ZuliZuli 也不包含任何支付功能。</p>
 
-<h2>10. 儿童信息</h2>
+<h2>11. 儿童信息</h2>
 <p>ZuliZuli 面向经营者使用，不针对 14 岁以下儿童设计，也不主动收集儿童个人信息。</p>
 
-<h2>11. 政策变更</h2>
+<h2>12. 政策变更</h2>
 <p>如未来版本调整数据处理方式，我们会在 App 内提示并在本页面更新。涉及收集范围扩大的重大变更，会在下一次启动时请你重新确认后才生效。</p>
 
-<h2>12. 联系我们</h2>
+<h2>13. 联系我们</h2>
 <p>如有任何疑问，或需要行使查询 / 更正 / 删除 / 注销等权利：</p>
 <ul>
 <li>邮箱：<a href="mailto:tucao.art@gmail.com">tucao.art@gmail.com</a></li>
@@ -104,7 +127,7 @@ a { color: #5A7A3E; }
 </ul>
 
 <div class="footer">
-<p>ZuliZuli · © 2026 北京抓码视界科技有限公司 · Bundle ID <code>ai.maaker.concierge</code> · <a href="./terms.html">服务协议</a></p>
+<p>ZuliZuli · © 2026 北京抓码视界科技有限公司 · iOS <code>ai.maaker.concierge</code> · HarmonyOS <code>ai.maaker.concierge.hm</code> · <a href="./terms.html">服务协议</a></p>
 </div>
 
 </body>
