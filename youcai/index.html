@@ -13,116 +13,166 @@ p { margin: 12px 0; }
 ul { padding-left: 24px; }
 li { margin: 6px 0; }
 code { background: #EDE5D0; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
-a { color: #5A7A3E; }
+a { color: #5A7A3E; word-break: break-all; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; display: block; overflow-x: auto; }
+th, td { border: 1px solid #E5DDC8; padding: 6px 8px; text-align: left; vertical-align: top; min-width: 88px; }
+th { background: #F4EFE0; }
 .footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #E5DDC8; color: #8A7A68; font-size: 13px; }
 </style>
 </head>
 <body>
 
 <h1>有菜 隐私政策</h1>
-<p class="meta">最后更新：2026 年 7 月 28 日 · 适用于 有菜 iOS 版（版本 1.0.0 起）</p>
+<p class="meta">更新日期：2026 年 10 月 9 日 · 生效日期：2026 年 10 月 9 日</p>
 
-<p>有菜（YouCai）是一款冰箱蔬菜管理工具。我们秉持数据最小化原则：只收集运行 App 必需的数据，不做广告、不做用户画像、不向数据经纪商出售或共享你的数据。本政策如实披露我们集成的全部第三方服务与数据流向。</p>
+<p>有菜（YouCai）是由<strong>北京抓码视界科技有限公司</strong>（以下简称"我们"）开发和运营的冰箱食材管理工具。适用范围：本政策适用于有菜在 iOS、Android、HarmonyOS 各平台的全部版本（包括通过 App Store、Google Play、华为应用市场、小米应用商店、OPPO 软件商店、vivo 应用商店、应用宝等渠道获取的版本）及其配套服务。</p>
 
-<h2>1. 我们收集什么</h2>
+<p>我们秉持数据最小化原则：只收集运行 App 必需的信息，不做广告、不做用户画像、不向任何人出售你的个人信息。本政策如实披露我们集成的全部第三方 SDK 与数据流向。请你在使用有菜前仔细阅读本政策；你点击同意后，我们才会按本政策处理你的个人信息。</p>
+
+<h2>0. 我们是谁</h2>
 <ul>
-<li><strong>账号信息</strong>：你的邮箱地址（用于登录和数据同步）。不收集手机号、真实姓名、身份证号</li>
-<li><strong>蔬菜与个人资料</strong>：你手动录入或拍照识别的蔬菜名称、数量、存放位置、入库日期、保质期，以及你设置的昵称、头像</li>
-<li><strong>消耗记录</strong>：你在 App 内记录的"我做了 / 丢掉了"行为日志</li>
-<li><strong>订阅状态</strong>：是否为 YouCai Pro 订阅用户（通过苹果和 RevenueCat 返回的匿名订阅凭据判断），不存储任何支付凭据</li>
-<li><strong>产品使用数据</strong>：你在 App 内点击的功能、浏览的页面等使用事件，以及一个用于区分设备的匿名标识符。用于了解功能使用情况、改进产品体验（经 PostHog，<strong>仅在你同意本隐私政策后才启用</strong>）</li>
-<li><strong>崩溃与诊断数据</strong>：App 崩溃或出错时的错误堆栈、设备型号、操作系统版本等技术信息，用于定位和修复问题（经 Sentry，<strong>仅在你同意本隐私政策后才启用</strong>）</li>
-<li><strong>推送标识</strong>：用于向你的设备发送通知的推送令牌（push token）。详见第 6 节</li>
+<li>运营者：北京抓码视界科技有限公司（Beijing Dramavision Technology Co., Ltd.）</li>
+<li>注册地址：北京市大兴区宏业东路2号院1号楼3层1354</li>
+<li>办公地址：北京市大兴区宏业东路2号院1号楼3层1354（同注册地址）</li>
+<li>个人信息保护负责人联系电话：18610346075，邮箱：<a href="mailto:support@maaker.cn">support@maaker.cn</a></li>
 </ul>
 
-<h2>2. 不收集什么</h2>
+<h2>1. 我们收集哪些信息、用来做什么</h2>
 <ul>
-<li>不收集手机号</li>
-<li>不收集位置信息</li>
-<li>不收集通讯录、麦克风</li>
-<li>不收集 IDFA / IMEI；不将任何设备标识用于广告投放或广告归因（第 5 节所述推送 SDK 使用 OAID 等标识，仅用于生成推送设备标识，不用于广告）</li>
-<li>不集成任何广告 SDK；不做跨应用、跨网站的追踪（不会因广告目的将你的身份提供给第三方）。上述产品分析与崩溃诊断均为我们自用、用于改进有菜本身，不与数据经纪商共享、不用于广告定向</li>
+<li><strong>账号信息</strong>：注册登录时的邮箱地址和密码（密码由认证服务加密保存，我们无法看到明文），用于登录与多设备同步。你也可以先以<strong>游客模式</strong>使用，此时我们只为你生成一个匿名账号标识。我们不收集手机号、真实姓名、身份证号</li>
+<li><strong>食材与个人资料</strong>：你手动录入或拍照识别的食材名称、数量、存放位置、入库日期、保质期，购物清单，你记录的"做了 / 丢掉了"行为，以及你设置的昵称、头像，用于提供冰箱管理、临期提醒、菜谱推荐与统计功能</li>
+<li><strong>家庭共享</strong>：你创建或加入家庭后，同一家庭的成员可以看到并编辑共享冰箱中的食材记录，以及成员的昵称和头像</li>
+<li><strong>照片与小票图片</strong>：仅在你主动使用"拍一下"或拍小票功能时上传，用于识别食材，详见第 3 节</li>
+<li><strong>大致所在城市</strong>：首页显示当地天气时，我们的服务器会根据你访问时的网络 IP 地址推断大致城市（精确到城市，不精确定位），有菜不申请定位权限</li>
+<li><strong>付费信息</strong>：你购买会员时的订单号、商品、金额、支付状态与会员状态，用于开通和恢复会员。支付在苹果、Google Play、华为、微信支付或支付宝完成，我们不接触你的银行卡号或支付密码</li>
+<li><strong>推送标识</strong>：用于向你的设备发送提醒的推送令牌（push token），仅在你开启通知后获取，详见第 6 节</li>
+<li><strong>产品使用数据</strong>：你在 App 内使用的功能、浏览的页面等使用事件，以及一个随机生成的匿名标识，用于了解功能使用情况、改进产品。仅在你同意本政策后启用。中国境内用户由我们位于中国境内的服务器处理和存储；境外地区用户经 PostHog 处理（见第 4、5 节）</li>
+<li><strong>崩溃与诊断数据</strong>：App 崩溃或出错时的错误堆栈、App 版本、设备型号、操作系统版本，用于定位和修复问题。仅在你同意本政策后启用。中国境内用户由我们位于中国境内的服务器处理和存储（旧版本 App 的过渡情况见第 4 节）；境外地区用户经 Sentry 处理（见第 4、5 节）</li>
+<li><strong>设备信息</strong>：第 5 节所列推送、支付 SDK 为实现其功能会收集设备标识（如 Android ID、OAID）、设备品牌型号、系统版本、网络状态等，具体以第 5 节为准</li>
+<li><strong>你的反馈</strong>：你通过邮件联系我们时提供的邮箱和内容，仅用于答复你</li>
 </ul>
 
-<h2>3. AI 拍冰箱识别（关键）</h2>
-<p>当你使用 "拍一张" 功能时，照片会<strong>先在本地压缩到 1024px</strong>，再经我们的服务器一次性转发到 AI 网关完成视觉识别。按你所在地区不同：</p>
+<h2>2. 我们不收集什么</h2>
 <ul>
-<li><strong>中国大陆</strong>：经我们自运营的服务器（<code>recipe.tucao.art</code>）转发到 OpenRouter AI 网关。参阅 <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter 隐私政策</a></li>
-<li><strong>其他国家/地区</strong>：经我们的 Supabase Edge Function 转发到 Google Gemini 完成识别</li>
-<li><strong>我们不留存照片</strong>：服务器端只在请求处理期间临时持有图片数据，响应完成立即丢弃，不写磁盘、不进日志、不入数据库</li>
-<li>识别结果（蔬菜名称、数量估计）由你确认入库后才写入数据库</li>
-<li>免费用户每日限 5 次识别，我们仅在 <code>ai_quota</code> 表保存调用次数计数用于频控</li>
+<li>不收集手机号、通讯录、短信、通话记录</li>
+<li>不申请定位权限，不收集精确位置</li>
+<li>不使用麦克风，不收集任何音频</li>
+<li>不收集 IMEI、IDFA；不将任何设备标识用于广告投放或广告归因</li>
+<li>不集成任何广告 SDK；不做跨应用、跨网站的追踪。产品分析与崩溃诊断仅用于改进有菜本身，不与数据经纪商共享、不用于广告定向</li>
 </ul>
 
-<h2>4. 数据存储在哪</h2>
-<p>有菜按你的 App Store 所在国家/地区在首次启动时确定数据所属区域，之后保持稳定：</p>
+<h2>3. AI 拍照识别</h2>
+<p>当你使用"拍一下"或拍小票功能时，照片会<strong>先在本地压缩</strong>，再经我们的服务器转发给 AI 视觉模型完成识别：</p>
 <ul>
-<li><strong>中国大陆用户</strong>：账号和蔬菜记录存放在我们<strong>自托管的 Supabase 实例</strong>（<code>api.maaker.cn</code>，部署在国内机房，独立运维）</li>
-<li><strong>其他国家/地区用户</strong>：数据存放在 <strong>Supabase Cloud</strong>（托管于境外，美国区）</li>
+<li><strong>中国大陆用户</strong>：经我们自运营的服务器（<code>recipe.tucao.art</code>，位于中国境内）转发，主要由深度求索（DeepSeek）的视觉模型识别，同时由阿里云百炼的通义千问视觉模型给出初步结果；上述服务不可用时，可能临时改由 Google Gemini（境外服务，见第 4 节）完成识别</li>
+<li><strong>其他国家/地区用户</strong>：经我们在 Supabase 上的云函数转发到 Google Gemini 完成识别</li>
+<li><strong>我们不留存照片</strong>：服务器只在请求处理期间临时持有图片，响应完成即丢弃，不写磁盘、不进日志、不入数据库</li>
+<li>识别结果（食材名称、数量估计）由你确认后才写入你的冰箱记录</li>
+<li>我们在服务器保存你的 AI 识别调用次数，仅用于免费额度的频率控制</li>
 </ul>
-<p>无论哪个区域，App 内均通过行级安全策略（RLS）确保：每个用户只能读写自己的数据，其他用户无法访问。</p>
 
-<h2>5. 第三方服务</h2>
-<ul>
-<li><strong>RevenueCat</strong>：处理订阅管理。只接触匿名订阅标识符和苹果返回的交易凭据，<strong>不接触邮箱或蔬菜数据</strong>。参阅 <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat 隐私政策</a></li>
-<li><strong>Apple App Store</strong>：处理所有内购支付。我们不接触你的信用卡或 Apple ID 密码</li>
-<li><strong>OpenRouter / Google Gemini</strong>：仅在 AI 识别时被动调用（见第 3 节）</li>
-<li><strong>PostHog</strong>：产品使用分析。收集匿名使用事件与设备标识，用于改进产品，不用于广告、不跨 App、不出售数据。仅在你同意本隐私政策后启用。参阅 <a href="https://posthog.com/privacy" target="_blank">PostHog 隐私政策</a></li>
-<li><strong>Sentry</strong>：崩溃与性能诊断。收集错误堆栈、设备型号、系统版本，用于修复问题。仅在你同意本隐私政策后启用。参阅 <a href="https://sentry.io/privacy/" target="_blank">Sentry 隐私政策</a></li>
-<li><strong>Firebase Cloud Messaging（Google）</strong>：向中国大陆以外用户的设备投递推送通知（见第 6 节）。参阅 <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策</a></li>
-<li><strong>阿里云 EMAS 移动推送</strong>：向中国大陆用户的设备投递推送通知（见第 6 节）。该 SDK 初始化时会收集设备标识信息（Android ID / OAID 等）、网络状态信息及<strong>传感器信息（加速度传感器）</strong>，用于生成推送设备标识、保障消息准确触达与防刷安全风控。该 SDK 仅在你同意本隐私政策后才初始化。参阅 <a href="https://www.aliyun.com/legal/privacy" target="_blank">阿里云隐私政策</a></li>
-<li><strong>微信支付 SDK（腾讯）</strong>：仅在你主动发起微信支付时调用，SDK 不在 App 启动期注册。参阅 <a href="https://www.tencent.com/zh-cn/privacy-policy.html" target="_blank">腾讯隐私政策</a></li>
-<li><strong>支付宝 SDK（蚂蚁集团）</strong>：仅在你主动发起支付宝支付时调用。支付交易安全风控过程中会收集设备信息与<strong>传感器信息（加速度传感器）</strong>。参阅 <a href="https://render.alipay.com/p/c/k2cx0tg8" target="_blank">支付宝隐私政策</a></li>
-</ul>
+<h2>4. 存储地点、存储期限与个人信息出境</h2>
+<p><strong>存储地点</strong>：有菜在首次启动时确定你的数据所属区域，之后保持稳定。本政策所称"中国境内用户"指 Android 国内版与 HarmonyOS 版用户、以及在中国大陆 App Store 下载的 iOS 用户；其余为"境外地区用户"。中国境内用户的账号和食材记录存放在我们<strong>位于中国境内</strong>的服务器（<code>api.maaker.cn</code>）；Google Play 版用户及在其他国家/地区 App Store 下载的 iOS 用户，数据存放在 Supabase Cloud（美国）。无论哪个区域，都通过行级安全策略确保每个用户只能读写自己（及所在家庭）的数据。</p>
+<p><strong>存储期限</strong>：账号与食材记录在你的账号存续期间保存；你注销账号后，我们立即删除服务器上你的账号及相关数据（法律法规另有规定的除外）。照片不留存。中国境内用户的使用统计数据保存 12 个月、崩溃诊断数据保存 90 天，到期删除或匿名化。境外地区用户的使用统计数据在 PostHog 保存 1 年，崩溃诊断数据在 Sentry 保存 30 天，到期由服务方删除。</p>
+<p><strong>个人信息出境</strong>：自 2026 年 10 月起，中国境内用户的使用统计与崩溃诊断改由我们位于中国境内的服务器处理和存储，我们不会将中国境内用户的使用统计信息传输至境外。过渡说明：在你升级到最新版本之前，旧版本 App 产生的崩溃诊断信息（错误堆栈、App 版本、设备型号、系统版本）仍可能由 Sentry（Functional Software, Inc.，美国，隐私政策见第 5 节）接收，升级后即停止。除此之外，为实现以下两项功能，中国境内用户的少量信息会传输至境外接收方，境外接收方仅按下表目的处理，你可以通过第 8 节的方式向我们行使对这些信息的权利：</p>
+<table>
+<tr><th>境外接收方</th><th>所在地</th><th>目的</th><th>出境的信息</th><th>联系方式 / 隐私政策</th></tr>
+<tr><td>Google LLC（Gemini）</td><td>美国</td><td>国内识别服务不可用时的 AI 识别兜底</td><td>你主动拍摄的食材照片 / 小票图片（不留存）</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td></tr>
+<tr><td>Kloudend, Inc.（ipapi.co）</td><td>美国</td><td>由 IP 推断大致城市以显示天气</td><td>网络 IP 地址（由我们的服务器发起查询）</td><td><a href="https://ipapi.co/privacy/" target="_blank">ipapi.co/privacy</a></td></tr>
+<tr><td>Open-Meteo</td><td>境外</td><td>查询当地天气</td><td>大致城市的经纬度（不含你的身份信息）</td><td><a href="https://open-meteo.com/en/terms" target="_blank">open-meteo.com/en/terms</a></td></tr>
+</table>
+<p><strong>境外地区用户</strong>：你的账号与食材记录存放在 Supabase Cloud（美国），使用统计由 PostHog, Inc.（美国）处理，崩溃诊断由 Functional Software, Inc.（Sentry，美国）处理，AI 识别由 Google Gemini 完成。</p>
+
+<h2>5. 第三方 SDK 清单</h2>
+<p>以下 SDK 均在你<strong>同意本政策之后</strong>才会初始化；推送类 SDK 还要等你开启通知后才初始化，支付类 SDK 仅在你主动发起支付时调用。不同平台、不同下载渠道实际启用的 SDK 不同，已在"用途"列注明。</p>
+<table>
+<tr><th>SDK 名称</th><th>提供方</th><th>用途</th><th>收集的个人信息</th><th>隐私政策</th></tr>
+<tr><td>阿里云移动推送（EMAS）</td><td>杭州阿里云智能科技有限公司</td><td>Android 国内版发送临期提醒</td><td>设备标识（Android ID、OAID）、设备品牌、型号、系统版本、网络状态、加速度传感器信息（用于生成推送设备标识、保障消息触达与防刷风控）</td><td><a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html" target="_blank">EMAS 隐私权政策</a></td></tr>
+<tr><td>小米推送</td><td>北京小米移动软件有限公司</td><td>Android 国内版在小米设备上的系统推送通道（随阿里云移动推送集成）</td><td>应用包名、版本号与运行状态，设备厂商、型号、内存、系统版本、推送 SDK 版本、设备归属地、网络类型与 WiFi 状态，通知栏设置，消息送达与点击时间，以其隐私政策为准</td><td><a href="https://dev.mi.com/console/doc/detail?pId=1822" target="_blank">小米推送隐私政策</a></td></tr>
+<tr><td>OPPO 推送</td><td>广东欢太科技有限公司</td><td>Android 国内版在 OPPO / 一加 / realme 设备上的系统推送通道（随阿里云移动推送集成）</td><td>推送注册标识（RegisterId）、应用标识等，以其个人信息保护政策为准</td><td><a href="https://open.oppomobile.com/documentation/page/info?id=11228" target="_blank">OPPO PUSH SDK 个人信息保护政策</a></td></tr>
+<tr><td>vivo 推送</td><td>维沃移动通信有限公司</td><td>Android 国内版在 vivo / iQOO 设备上的系统推送通道（随阿里云移动推送集成）</td><td>设备标识（如 Android ID、OAID、VAID、RegID）、使用推送的应用信息、设备制造商与型号、系统版本、网络信息、通知栏与锁屏状态、消息送达与点击时间，以其隐私政策为准</td><td><a href="https://dev.vivo.com.cn/documentCenter/doc/652" target="_blank">vivo 推送隐私政策</a></td></tr>
+<tr><td>魅族推送</td><td>珠海星纪魅族信息技术有限公司</td><td>Android 国内版在魅族设备上的系统推送通道（随阿里云移动推送集成）</td><td>推送令牌及该 SDK 为投递消息所需的设备信息，以其隐私政策为准</td><td><a href="https://open.flyme.cn/docs?id=202" target="_blank">魅族推送隐私政策</a></td></tr>
+<tr><td>荣耀推送</td><td>深圳荣耀软件技术有限公司</td><td>Android 国内版在荣耀设备上的系统推送通道（随阿里云移动推送集成）</td><td>设备标识符（AAID、PushToken）、APPID、应用包名</td><td><a href="https://developer.honor.com/cn/docs/11002/guides/sdk-data-security" target="_blank">荣耀推送 SDK 隐私声明</a></td></tr>
+<tr><td>华为推送（HMS Push Kit）</td><td>华为软件技术有限公司</td><td>Android 国内版在华为设备上的系统推送通道（随阿里云移动推送集成）；HarmonyOS 版发送临期提醒</td><td>推送令牌、应用标识、设备型号与系统版本等，以其隐私声明为准</td><td><a href="https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/sdk-data-security-0000001050042177" target="_blank">华为推送 SDK 隐私声明</a></td></tr>
+<tr><td>微信 OpenSDK（微信支付）</td><td>深圳市腾讯计算机系统有限公司</td><td>Android 国内版，你主动选择微信支付时调用；启动时不注册</td><td>支付订单信息，及该 SDK 处理规则所述的设备信息</td><td><a href="https://support.weixin.qq.com/cgi-bin/mmsupportacctnodeweb-bin/pages/RYiYJkLOrQwu0nb8" target="_blank">微信 Open SDK 个人信息处理规则</a></td></tr>
+<tr><td>支付宝 SDK</td><td>支付宝（中国）网络技术有限公司</td><td>Android 国内版，你主动选择支付宝支付时调用</td><td>支付订单信息、设备信息、网络信息、加速度传感器信息（用于交易安全风控）</td><td><a href="https://render.alipay.com/p/c/k2cx0tg8" target="_blank">支付宝隐私政策</a></td></tr>
+<tr><td>PostHog</td><td>PostHog, Inc.（美国）</td><td>仅境外地区用户：产品使用分析（中国境内用户的使用统计由我们的境内服务器处理，不经 PostHog）</td><td>匿名使用事件、页面名、App 版本、设备型号、系统版本、随机匿名标识；不收集邮箱、食材内容和照片</td><td><a href="https://posthog.com/privacy" target="_blank">PostHog 隐私政策</a></td></tr>
+<tr><td>Sentry</td><td>Functional Software, Inc.（美国）</td><td>境外地区用户：崩溃与错误诊断。中国境内用户的崩溃诊断由我们的境内服务器处理；仅旧版本 App 在升级前仍可能经 Sentry 接收（见第 4 节过渡说明）</td><td>错误堆栈、App 版本、设备型号、系统版本；不收集食材内容和照片</td><td><a href="https://sentry.io/privacy/" target="_blank">Sentry 隐私政策</a></td></tr>
+<tr><td>RevenueCat</td><td>RevenueCat, Inc.（美国）</td><td>仅 iOS 版与 Google Play 版：会员购买与恢复（Android 国内版、HarmonyOS 版不启用）</td><td>匿名用户标识、应用商店返回的交易凭据；不接触邮箱或食材数据</td><td><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat 隐私政策</a></td></tr>
+<tr><td>Firebase Cloud Messaging</td><td>Google LLC（美国）</td><td>仅 Google Play 版发送提醒（Android 国内版、iOS 版、HarmonyOS 版不启用）</td><td>推送令牌、设备型号、系统版本</td><td><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 隐私政策</a></td></tr>
+<tr><td>华为应用内支付（IAP Kit，HarmonyOS 系统服务）</td><td>华为终端有限公司</td><td>仅 HarmonyOS 版：会员购买</td><td>订单信息与华为返回的交易凭据</td><td><a href="https://consumer.huawei.com/cn/privacy/privacy-policy/" target="_blank">华为消费者业务隐私声明</a></td></tr>
+</table>
+<p>其他第三方服务（非 SDK，由我们的服务器调用，不在你的设备上运行）：AI 识别服务（深度求索 DeepSeek，<a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html" target="_blank">隐私政策</a>；阿里云百炼，<a href="https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201902141711_54837.html" target="_blank">阿里云隐私权政策</a>；Google Gemini），天气服务（ipapi.co、Open-Meteo），以及 Supabase（海外用户数据托管，<a href="https://supabase.com/privacy" target="_blank">隐私政策</a>）。应用内购买由 Apple App Store、Google Play、华为应用市场处理，我们不接触你的支付账号密码。</p>
 
 <h2>6. 推送通知</h2>
-<p>仅在你授予通知权限后启用。我们会发送以下两类提醒：</p>
-<ul>
-<li><strong>临期提醒</strong>：蔬菜剩余 3 天 / 1 天 / 当天时提醒你优先处理</li>
-<li><strong>早市提醒</strong>：每天 7:00 可选提醒</li>
-</ul>
-<p>为了在 App 未打开时也能准时提醒，这些通知通过<strong>远程推送服务</strong>投递：中国大陆用户经<strong>阿里云 EMAS</strong>，其他国家/地区用户经 <strong>Firebase Cloud Messaging → Apple APNs</strong>。为此我们会在你登录后向服务器注册一个设备推送令牌（push token），用于定向投递。你可以随时在系统设置或 App 内关闭通知。</p>
+<p>仅在你授予通知权限后启用。我们会发送食材临期提醒（剩余 3 天 / 1 天 / 当天），以及你在设置中开启的其他提醒。为了在 App 未打开时也能准时提醒，这些通知通过远程推送投递：Android 国内版经阿里云移动推送及各手机厂商的系统推送通道，HarmonyOS 版经华为推送，iOS 版经苹果推送服务（APNs），Google Play 版经 Firebase Cloud Messaging。为此我们会在你开启通知后向服务器登记一个推送令牌，用于定向投递。你可以随时在系统设置或 App 内关闭通知。</p>
+<p><strong>自启动与关联启动说明</strong>：在你同意本政策并开启通知后，为确保 App 未运行时也能收到提醒，Android 国内版集成的阿里云移动推送及厂商推送通道可能在收到推送消息时通过系统广播唤醒有菜（自启动 / 关联启动），仅用于接收和展示提醒。关闭通知或注销账号后不再发生。</p>
 
 <h2>7. 权限说明与设备信息</h2>
+<p>有菜只在需要时申请权限，你拒绝后不影响与该权限无关的功能。各平台申请或在安装包中声明的权限如下：</p>
 <ul>
-<li><code>相机</code>：拍冰箱照片用于 AI 识别</li>
-<li><code>相册</code>：从相册选取已有照片用于 AI 识别</li>
-<li><code>通知</code>：临期和早市提醒（可在设置内关闭）</li>
+<li><code>相机</code>（Android：CAMERA；HarmonyOS：ohos.permission.CAMERA；iOS：相机）：在你点"拍一下"时申请，用于拍摄食材或小票照片进行识别。拒绝后可手动录入，或从相册选择照片</li>
+<li><code>通知</code>（Android 13 及以上：POST_NOTIFICATIONS；iOS：通知）：在你首次需要提醒或在设置中开启通知时申请，用于临期提醒。拒绝后收不到提醒，其他功能不受影响</li>
+<li><code>相册</code>：从相册选照片通过系统照片选择器完成，<strong>不申请</strong>相册或存储权限</li>
+<li><code>网络</code>（INTERNET、ACCESS_NETWORK_STATE、ACCESS_WIFI_STATE）：联网同步数据、识别食材；推送 SDK 用于判断网络状态。系统普通权限，无需弹窗</li>
+<li><code>振动、保持唤醒</code>（VIBRATE、WAKE_LOCK）：收到提醒时振动、在后台接收推送消息</li>
+<li><code>获取 / 调整任务列表</code>（GET_TASKS、REORDER_TASKS）：由阿里云移动推送 SDK 在安装包中声明，有菜自身代码不调用。按该 SDK 的说明，点击推送通知打开有菜时，用于判断有菜是否已有打开的界面（GET_TASKS），以及有菜已在运行时将其切换到前台（REORDER_TASKS）</li>
+<li><code>读取存储</code>（READ_EXTERNAL_STORAGE，仅 Android 9 及以下系统）：由相机组件在安装包中声明，用于旧系统上拍照时的临时文件读写；Android 10 及以上不声明</li>
+<li><code>麦克风</code>（RECORD_AUDIO）：由相机组件在安装包中声明（该组件支持录像）。有菜只拍照、不录像，<strong>不会申请此权限，也不收集任何音频</strong></li>
+<li><code>Google Play 结算</code>（com.android.vending.BILLING）：由 RevenueCat SDK 在安装包中声明，仅 Google Play 版用于应用内购买；<strong>Android 国内版不使用 Google Play 结算，不会调用</strong></li>
+<li><code>厂商推送权限</code>（如 MIPUSH_RECEIVE 等各厂商推送通道自定义权限）：由厂商推送通道声明，仅用于接收推送消息</li>
 </ul>
 
 <p><strong>设备信息与传感器</strong></p>
 <ul>
 <li>有菜自身的功能<strong>不主动读取传感器数据</strong>，也不基于传感器做用户画像或行为分析</li>
-<li>上文第 5 节所述的<strong>推送 SDK（阿里云 EMAS）</strong>与<strong>支付 SDK（支付宝）</strong>，出于生成设备标识和支付安全风控的目的，会访问<strong>加速度传感器</strong>信息</li>
-<li>拍照时，系统相机组件会使用设备方向（基于加速度计）以校正照片的旋转方向</li>
-<li>以上所有访问均发生在你同意本隐私政策之后；在你同意之前，我们不会初始化上述任何第三方 SDK</li>
+<li>第 5 节所述的阿里云移动推送与支付宝 SDK，出于生成设备标识和交易安全风控的目的，会访问<strong>加速度传感器</strong>信息</li>
+<li>拍照时，系统相机组件会使用设备方向（基于加速度计）校正照片方向</li>
+<li>以上访问均发生在你同意本政策之后；在你同意之前，我们不初始化任何第三方 SDK</li>
 </ul>
 
-<h2>8. 数据导出和删除</h2>
+<h2>8. 你的权利</h2>
 <ul>
-<li><strong>导出</strong>：在 "我的 &gt; 导出数据" 可一键导出你账号下所有蔬菜、消耗记录为 JSON 文件</li>
-<li><strong>删除账号</strong>：发送邮件至 <a href="mailto:support@maaker.cn">support@maaker.cn</a> 注明注销，我们在 7 天内彻底删除你的账号、蔬菜、消耗日志、配额记录及推送令牌</li>
-<li>订阅记录保留到苹果/RevenueCat 侧自然过期；我们本地仅保留"曾经订阅过"的匿名计数</li>
+<li><strong>查阅、复制</strong>：你可以在 App 内查看你的全部食材记录；在"设置 &gt; 数据与账号 &gt; 导出我的数据"中可一键导出账号下的食材、菜谱、偏好等数据为 JSON 文件，获取个人信息副本</li>
+<li><strong>更正、补充</strong>：你可以在 App 内直接编辑食材记录、昵称和头像</li>
+<li><strong>删除</strong>：你可以在 App 内删除任意食材记录；也可以联系我们删除特定信息</li>
+<li><strong>注销账号</strong>：在"设置 &gt; 删除账户"中可自助注销，确认后立即删除服务器上你的账号、食材、消耗记录、配额记录及推送令牌，游客账号同样可以注销；也可以通过第 13 节的方式联系我们代为注销</li>
+<li><strong>撤回同意</strong>：你可以在系统设置中关闭相机、通知权限，在 App 内关闭提醒，或注销账号、卸载 App 来撤回同意。撤回不影响撤回前基于同意已进行的处理</li>
+<li><strong>响应时限</strong>：对你通过邮件或电话提出的请求，我们会在核实身份后 15 个工作日内答复处理</li>
 </ul>
 
-<h2>9. 儿童信息</h2>
-<p>有菜不针对 13 岁以下儿童设计，也不主动收集儿童信息。</p>
-
-<h2>10. 政策变更</h2>
-<p>如未来版本调整数据处理方式，我们会在 App 内提示并在本页面更新。重大变更会在下一次启动时要求你重新确认。</p>
-
-<h2>11. 联系我们</h2>
-<p>如有任何疑问或行使你的数据权利（查询 / 更正 / 删除），请邮件联系：</p>
+<h2>9. 共享、转让与公开披露</h2>
 <ul>
-<li>邮箱：<a href="mailto:support@maaker.cn">support@maaker.cn</a></li>
+<li>我们不出售你的个人信息，也不与第三方共享用于其营销</li>
+<li>仅为实现第 3、4、5 节所述功能，向上述受托服务商提供完成该功能所必需的信息</li>
+<li>如发生合并、收购或资产转让涉及个人信息转移，我们会告知你接收方名称和联系方式，并要求其继续受本政策约束</li>
+<li>除法律法规要求或有权机关依法要求外，我们不会公开披露你的个人信息</li>
 </ul>
 
-<h2 id="support">12. 支持</h2>
+<h2>10. 信息安全</h2>
+<p>我们采用 HTTPS 加密传输、数据库行级安全策略与最小权限访问控制保护你的个人信息。如不幸发生个人信息安全事件，我们会按法律要求及时告知你事件情况、可能的影响和我们已采取的措施，并向有关主管部门报告。</p>
+
+<h2>11. 未成年人保护</h2>
+<p>有菜面向成年人设计，不面向不满 14 周岁的未成年人，也不主动收集其个人信息。如果你是不满 14 周岁的未成年人，请在监护人同意和指导下使用。如我们发现在未获监护人同意的情况下收集了不满 14 周岁未成年人的个人信息，会尽快删除。</p>
+
+<h2>12. 政策变更</h2>
+<p>如本政策发生变更，我们会在本页面发布更新版本并更新日期；涉及处理目的、方式或范围的重大变更，会在 App 内显著提示，并在你下次启动时请你重新确认。</p>
+
+<h2>13. 联系我们与投诉渠道</h2>
+<p>如对本政策有疑问，或需要行使你的个人信息权利，请联系：</p>
+<ul>
+<li>运营者：北京抓码视界科技有限公司</li>
+<li>注册地址、办公地址及通讯地址：北京市大兴区宏业东路2号院1号楼3层1354</li>
+<li>个人信息保护负责人联系电话：18610346075，邮箱：<a href="mailto:support@maaker.cn">support@maaker.cn</a></li>
+</ul>
+<p>我们会在 15 个工作日内答复。如你对答复不满意，或认为我们的处理损害了你的合法权益，可以向网信、工业和信息化、市场监督管理等监管部门投诉举报，也可以向有管辖权的人民法院提起诉讼。</p>
+
+<h2 id="support">14. 支持</h2>
 <p>有菜遇到 Bug、想建议新功能、想反馈体验问题？发邮件给我们：<a href="mailto:support@maaker.cn">support@maaker.cn</a>。我们每周会读邮件。</p>
 
 <div class="footer">
-<p>有菜 YouCai · © 2026 Maaker.AI · Bundle ID <code>ai.maaker.youcai</code> · <a href="./terms.html">服务条款</a> · <a href="./en.html">English</a></p>
-<p style="margin-top: 12px;">本协议以中文版本为准。如英文翻译版本与中文版本有任何不一致，以中文版本为准。</p>
+<p>有菜 YouCai · © 2026 北京抓码视界科技有限公司 · iOS / Android 包名 <code>ai.maaker.youcai</code> · HarmonyOS 包名 <code>ai.maaker.youcai.hm</code> · <a href="./terms.html">服务条款</a> · <a href="./en.html">English</a></p>
+<p style="margin-top: 12px;">本政策以中文版本为准。如英文翻译版本与中文版本有任何不一致，以中文版本为准。</p>
 </div>
 
 </body>
