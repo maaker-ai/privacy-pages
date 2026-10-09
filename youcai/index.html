@@ -118,8 +118,8 @@ th { background: #F4EFE0; }
 <li><code>振动、保持唤醒</code>（VIBRATE、WAKE_LOCK）：收到提醒时振动、在后台接收推送消息</li>
 <li><code>获取 / 调整任务列表</code>（GET_TASKS、REORDER_TASKS）：由阿里云移动推送 SDK 在安装包中声明，有菜自身代码不调用。按该 SDK 的说明，点击推送通知打开有菜时，用于判断有菜是否已有打开的界面（GET_TASKS），以及有菜已在运行时将其切换到前台（REORDER_TASKS）</li>
 <li><code>读取存储</code>（READ_EXTERNAL_STORAGE，仅 Android 9 及以下系统）：由相机组件在安装包中声明，用于旧系统上拍照时的临时文件读写；Android 10 及以上不声明</li>
-<li><code>麦克风</code>（RECORD_AUDIO）：由相机组件在安装包中声明（该组件支持录像）。有菜只拍照、不录像，<strong>不会申请此权限，也不收集任何音频</strong></li>
-<li><code>Google Play 结算</code>（com.android.vending.BILLING）：由 RevenueCat SDK 在安装包中声明，仅 Google Play 版用于应用内购买；<strong>Android 国内版不使用 Google Play 结算，不会调用</strong></li>
+<li><code>麦克风</code>（RECORD_AUDIO）：<strong>有菜不使用麦克风</strong>，只拍照、不录像，不收集任何音频。Android 国内版（各国内应用商店与官网下载版）安装包中不声明此权限；Google Play 版安装包中由相机组件声明（该组件支持录像），有菜不会申请</li>
+<li><code>Google Play 结算</code>（com.android.vending.BILLING）：仅 Google Play 版声明，由 RevenueCat SDK 在安装包中声明，用于应用内购买；<strong>Android 国内版（各国内应用商店与官网下载版）不声明此权限</strong>，国内版通过微信支付或支付宝付费</li>
 <li><code>厂商推送权限</code>（如 MIPUSH_RECEIVE 等各厂商推送通道自定义权限）：由厂商推送通道声明，仅用于接收推送消息</li>
 </ul>
 
