@@ -1,0 +1,52 @@
+{
+  "source": "OPPO 开放平台《SDK检测问题待整改通知》2026-10-09 17:29（有菜 107），值取自邮件「需要修改为」，OPPO 称其来自全国SDK管理服务平台登记",
+  "sdks": [
+    {
+      "package": "com.alipay.sdk",
+      "name": "APP支付客户端SDK",
+      "developer": "支付宝(杭州)信息技术有限公司",
+      "privacy_url": "https://opendocs.alipay.com/open/54/01g6qm#%E6%94%AF%E4%BB%98%E5%AE%9D%20App%20%E6%94%AF%E4%BB%98%E5%AE%A2%E6%88%B7%E7%AB%AF%20SDK%20%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96"
+    },
+    {
+      "package": "com.heytap.msp",
+      "name": "OPPO PUSH 客户端SDK",
+      "developer": "广东欢太科技有限公司",
+      "privacy_url": "https://open.oppomobile.com/new/developmentDoc/info?id=11228"
+    },
+    {
+      "package": "com.vivo.push",
+      "name": "vivo推送SDK",
+      "developer": "维沃移动通信有限公司",
+      "privacy_url": "https://dev.vivo.com.cn/documentCenter/doc/878"
+    },
+    {
+      "package": "com.tencent.mm.opensdk",
+      "name": "微信OpenSDK Android",
+      "developer": "深圳市腾讯计算机系统有限公司",
+      "privacy_url": "https://support.weixin.qq.com/cgi-bin/mmsupportacctnodeweb-bin/pages/RYiYJkLOrQwu0nb8"
+    },
+    {
+      "package": "com.huawei.hms.stats",
+      "name": "性能加速库",
+      "developer": "华为软件技术有限公司",
+      "privacy_url": "https://developer.huawei.com/consumer/cn/doc/development/graphics-Guides/sdk-data-security-0000001050700772"
+    },
+    {
+      "package": "com.alibaba.sdk.android.push",
+      "name": "移动推送-android",
+      "developer": "杭州阿里云智能科技有限公司",
+      "privacy_url": "https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202112071754_83380.html?spm=a2c4g.434217.0.0.6f663e68ZeueeL"
+    },
+    {
+      "package": "com.meizu.cloud.pushsdk",
+      "name": "魅族推送SDK",
+      "developer": "珠海星纪魅族信息技术有限公司",
+      "privacy_url": "https://open.flyme.cn/docs?id=202"
+    }
+  ],
+  "completeness_missing": [
+    "com.alipay.sdk",
+    "com.tencent.mm.opensdk",
+    "com.huawei.hms.stats"
+  ]
+}
