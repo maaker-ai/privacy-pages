@@ -64,7 +64,7 @@ th { background: #F4EFE0; }
 <h2>3. AI 拍照识别</h2>
 <p>当你使用"拍一下"或拍小票功能时，照片会<strong>先在本地压缩</strong>，再经我们的服务器转发给 AI 视觉模型完成识别：</p>
 <ul>
-<li><strong>中国大陆用户</strong>：经我们自运营的服务器（<code>recipe.tucao.art</code>，位于中国境内）转发，主要由深度求索（DeepSeek）的视觉模型识别，同时由阿里云百炼的通义千问视觉模型给出初步结果；上述服务不可用时，可能临时改由 Google Gemini（境外服务，见第 4 节）完成识别</li>
+<li><strong>中国大陆用户</strong>：经我们自运营的服务器（<code>recipe.maaker.cn</code>，位于中国境内）转发，主要由深度求索（DeepSeek）的视觉模型识别，同时由阿里云百炼的通义千问视觉模型给出初步结果；上述服务不可用时，可能临时改由 Google Gemini（境外服务，见第 4 节）完成识别</li>
 <li><strong>其他国家/地区用户</strong>：经我们在 Supabase 上的云函数转发到 Google Gemini 完成识别</li>
 <li><strong>我们不留存照片</strong>：服务器只在请求处理期间临时持有图片，响应完成即丢弃，不写磁盘、不进日志、不入数据库</li>
 <li>识别结果（食材名称、数量估计）由你确认后才写入你的冰箱记录</li>
