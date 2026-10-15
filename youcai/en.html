@@ -20,7 +20,7 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>YouCai Privacy Policy</h1>
-<p class="meta">Last updated: July 28, 2026 · Applies to YouCai for iOS (version 1.0.0 onward)</p>
+<p class="meta">Last updated: October 15, 2026 · Effective: October 15, 2026 · Applies to YouCai for iOS, Android and HarmonyOS</p>
 
 <p>YouCai is a fridge vegetable tracker. We follow data minimization: we collect only what is needed to run the app. No ads, no profiling, no selling or sharing your data with data brokers. This policy fully discloses every third-party service we integrate and how data flows.</p>
 
@@ -49,10 +49,14 @@ a { color: #5A7A3E; }
 <ul>
 <li><strong>Mainland China</strong>: forwarded through our self-operated server (<code>recipe.maaker.cn</code>) to the OpenRouter AI gateway. See <a href="https://openrouter.ai/privacy" target="_blank">OpenRouter Privacy Policy</a></li>
 <li><strong>Other countries / regions</strong>: forwarded through our Supabase Edge Function to Google Gemini for recognition</li>
-<li><strong>We do not retain photos</strong>: our server holds image data only during the request and discards it immediately after the response. No disk write, no log, no database</li>
+<li><strong>We do not retain AI recognition photos</strong>: our server holds image data only during the request and discards it immediately after the response. No disk write, no log, no database</li>
 <li>The recognized result (vegetable names, quantity estimates) is only written to our database after you confirm it</li>
 <li>Free tier is limited to 5 AI recognitions per day; we only keep a call counter in our <code>ai_quota</code> table for rate limiting</li>
 </ul>
+
+<h2>3.1 Optional profile photos</h2>
+<p>Profile photos are optional; other features work without uploading one. Your device crops the image to a square of at most 512×512 pixels and re-encodes it to remove EXIF, GPS and other original metadata. Mainland China avatars are re-encoded again by our server and stored in Tencent Cloud COS in mainland China; overseas avatars are stored in Supabase Storage in the United States. The URL is linked to your account for profile and family-member display. Avatars are not sent to the AI recognition model. These are public URLs: anyone who knows the link can view the photo. Random filenames are not access controls; please avoid sensitive photos.</p>
+<p>After a new avatar or sticker is saved successfully, the previous photo is queued for deletion. Failures are logged and retried. Retired URLs cannot be reused; upload a new copy instead. An uploaded photo that you cancel or never save may remain until account deletion. On account deletion, mainland accounts are removed first and a background task deletes all avatars in the account folder. Overseas avatars are removed through the Storage API before account deletion; a cleanup failure leaves the account available for retry. Follow-up sweeps remove late uploads. Failed tasks remain retryable; after successful cleanup, sweeps continue for seven days and account-related cleanup records in the database are then removed. While the account exists, minimal retirement markers prevent old URLs from being reactivated. Deletion cannot recall copies already downloaded by others, and public caches may remain until expiry.</p>
 
 <h2>4. Where your data lives</h2>
 <p>YouCai determines your data region at first launch based on your App Store country/region, and keeps it stable thereafter:</p>
@@ -85,8 +89,8 @@ a { color: #5A7A3E; }
 
 <h2>7. Permissions and device information</h2>
 <ul>
-<li><code>Camera</code>: to take photos of your fridge for AI recognition</li>
-<li><code>Photo Library</code>: to pick existing photos for AI recognition</li>
+<li><code>Camera</code>: to take photos of your fridge for AI recognition or set a profile photo</li>
+<li><code>Photo Library</code>: to pick existing photos for AI recognition or set a profile photo; Android and HarmonyOS use the system photo picker without broad photo-library access</li>
 <li><code>Notifications</code>: expiry and morning reminders (toggleable in Settings)</li>
 </ul>
 
