@@ -20,7 +20,7 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>YouCai Privacy Policy</h1>
-<p class="meta">Last updated: October 15, 2026 · Effective: October 15, 2026 · Applies to YouCai for iOS, Android and HarmonyOS</p>
+<p class="meta">Last updated: November 10, 2026 · Effective: November 10, 2026 · Applies to YouCai for iOS, Android and HarmonyOS</p>
 
 <p>YouCai is a fridge vegetable tracker. We follow data minimization: we collect only what is needed to run the app. No ads, no profiling, no selling or sharing your data with data brokers. This policy fully discloses every third-party service we integrate and how data flows.</p>
 
@@ -29,6 +29,7 @@ a { color: #5A7A3E; }
 <li><strong>Account</strong>: your email (for sign-in and sync). We do not collect phone numbers, real names, or government IDs</li>
 <li><strong>Vegetables &amp; profile</strong>: the vegetables you manually enter or recognize via camera (quantity, storage location, purchase date, shelf life), plus the nickname and avatar you set</li>
 <li><strong>Consumption logs</strong>: the "cooked it / tossed it" events you log in-app</li>
+<li><strong>Organizing recipes from shared links</strong>: Only when you tap the “Import recipe” button do we submit the link or shared text in the import field to organize and save the recipe. See <a href="#recipe-import">section 3.2</a> and <a href="#recipe-import-processors">section 5.1</a> for clipboard checks and third-party processing</li>
 <li><strong>Subscription status</strong>: whether you are a YouCai Pro subscriber (derived from anonymous receipt data via Apple and RevenueCat). We never store your payment credentials</li>
 <li><strong>Product usage data</strong>: the features you tap and screens you view, plus an anonymous identifier used to distinguish devices. Used to understand feature usage and improve the experience (via PostHog, <strong>enabled only after you accept this privacy policy</strong>)</li>
 <li><strong>Crash &amp; diagnostic data</strong>: error stack traces, device model, and OS version when the app crashes or errors, used to locate and fix problems (via Sentry, <strong>enabled only after you accept this privacy policy</strong>)</li>
@@ -39,7 +40,7 @@ a { color: #5A7A3E; }
 <ul>
 <li>No phone number</li>
 <li>No location data</li>
-<li>No contacts or microphone access</li>
+<li>No access to your contacts. We do not request microphone permission or record audio from your device. If you start a recipe import, we may process audio from a public source. See <a href="#recipe-import">section 3.2</a></li>
 <li>No IDFA or IMEI; no device identifier is used for ad targeting or attribution (the push SDK described in section 5 uses identifiers such as OAID solely to generate a push device ID, never for advertising)</li>
 <li>No advertising SDKs; no cross-app or cross-site tracking (we never share your identity with third parties for advertising). The product analytics and crash diagnostics above are used by us to improve YouCai itself — never shared with data brokers, never used for ad targeting</li>
 </ul>
@@ -57,6 +58,11 @@ a { color: #5A7A3E; }
 <h2>3.1 Optional profile photos</h2>
 <p>Profile photos are optional; other features work without uploading one. Your device crops the image to a square of at most 512×512 pixels and re-encodes it to remove EXIF, GPS and other original metadata. Mainland China avatars are re-encoded again by our server and stored in Tencent Cloud COS in mainland China; overseas avatars are stored in Supabase Storage in the United States. The URL is linked to your account for profile and family-member display. Avatars are not sent to the AI recognition model. These are public URLs: anyone who knows the link can view the photo. Random filenames are not access controls; please avoid sensitive photos.</p>
 <p>After a new avatar or sticker is saved successfully, the previous photo is queued for deletion. Failures are logged and retried. Retired URLs cannot be reused; upload a new copy instead. An uploaded photo that you cancel or never save may remain until account deletion. On account deletion, mainland accounts are removed first and a background task deletes all avatars in the account folder. Overseas avatars are removed through the Storage API before account deletion; a cleanup failure leaves the account available for retry. Follow-up sweeps remove late uploads. Failed tasks remain retryable; after successful cleanup, sweeps continue for seven days and account-related cleanup records in the database are then removed. While the account exists, minimal retirement markers prevent old URLs from being reactivated. Deletion cannot recall copies already downloaded by others, and public caches may remain until expiry.</p>
+
+<h2 id="recipe-import">3.2 Organizing recipes from shared links</h2>
+<p>On the mainland China Android version, when you open the Import recipe screen or return to it from another app with the input field empty, YouCai checks on your device whether the clipboard text contains a supported share link and asks whether you want to paste it. The text is added only if you tap “Paste,” and you can edit or clear it. Checking the clipboard and pasting do not send the text to our server. Only when you tap the “Import recipe” button does YouCai send the contents of the input field, including the link and any text included with the share, to our server to extract the link and organize the recipe.</p>
+<p>To organize a recipe, we may retrieve the public text, images, video and audio track at the link. Our servers in mainland China transcribe the public audio and, when needed, recognize captions in video frames. YouCai does not request microphone permission or record audio from your device. We may send text from the source, the audio transcription or recognized captions to Zhipu GLM to extract ingredients and cooking steps. If we cannot read a public Douyin page directly, we may send its public link to a fallback resolver, without the rest of the shared text or account information. See <a href="#recipe-import-processors">section 5.1</a>.</p>
+<p>Import task records expire after seven days. Once processed successfully, the recipe is saved to My Recipes. The saved recipe is separate from the temporary import task and is not deleted when that task expires. You can view, edit and delete saved recipes in the app.</p>
 
 <h2>4. Where your data lives</h2>
 <p>YouCai determines your data region at first launch based on your App Store country/region, and keeps it stable thereafter:</p>
@@ -79,6 +85,22 @@ a { color: #5A7A3E; }
 <li><strong>Alipay SDK (Ant Group)</strong>: invoked only when you actively start an Alipay payment. For transaction security and fraud prevention it collects device information and <strong>sensor data (accelerometer)</strong>. See <a href="https://render.alipay.com/p/c/k2cx0tg8" target="_blank">Alipay Privacy Policy</a></li>
 </ul>
 
+<h2 id="recipe-import-processors">5.1 Third-party services for recipe import</h2>
+<p>Our server uses these services as needed after you start organizing. They are not SDKs installed on your device.</p>
+<h3>Zhipu GLM</h3>
+<ul>
+<li>Provider: Beijing Zhipu Huazhang Technology Co., Ltd.</li>
+<li>Purpose: extract ingredients and cooking steps from public source content</li>
+<li>Information processed: text from the public source, the audio transcription or recognized captions. We do not provide account information or audio from your device</li>
+<li>Privacy policy: <a href="https://docs.bigmodel.cn/cn/terms/privacy-policy" target="_blank" rel="noopener noreferrer">https://docs.bigmodel.cn/cn/terms/privacy-policy</a></li>
+</ul>
+<h3>Fallback services for public Douyin links</h3>
+<ul>
+<li>API domains: <code>api.pearktrue.cn</code>, <code>apis.jxcxin.cn</code>, <code>api.ihuahui.win</code></li>
+<li>Purpose: retrieve public content when the public Douyin page cannot be read directly</li>
+<li>Information processed: only the public link being resolved. We do not provide the rest of the shared text or account information</li>
+</ul>
+
 <h2>6. Notifications</h2>
 <p>Enabled only after you grant notification permission. We send two kinds of reminders:</p>
 <ul>
@@ -92,6 +114,7 @@ a { color: #5A7A3E; }
 <li><code>Camera</code>: to take photos of your fridge for AI recognition or set a profile photo</li>
 <li><code>Photo Library</code>: to pick existing photos for AI recognition or set a profile photo; Android and HarmonyOS use the system photo picker without broad photo-library access</li>
 <li><code>Notifications</code>: expiry and morning reminders (toggleable in Settings)</li>
+<li><code>Microphone</code> (RECORD_AUDIO): YouCai does not request this permission or record audio from your device. The mainland China Android package does not declare it. The Google Play package’s camera component declares it because it supports video recording, but YouCai does not request it. Organizing a public video may involve processing that video’s public audio track. See <a href="#recipe-import">section 3.2</a></li>
 </ul>
 
 <p><strong>Device information and sensors</strong></p>
@@ -105,6 +128,7 @@ a { color: #5A7A3E; }
 <h2>8. Data export and deletion</h2>
 <ul>
 <li><strong>Export</strong>: Profile &gt; Export Data gives you a JSON file with every vegetable, consumption log, and stat under your account</li>
+<li><strong>Deletion</strong>: You can delete food records and saved personal recipes in the app, or contact us to delete specific information</li>
 <li><strong>Account deletion</strong>: email <a href="mailto:support@maaker.cn">support@maaker.cn</a> with your deletion request. We fully purge your account, vegetables, consumption logs, quota records, and push token within 7 days</li>
 <li>Subscription records on Apple / RevenueCat side expire on their own schedule; we keep only an anonymous "was a subscriber" counter locally</li>
 </ul>
@@ -114,6 +138,7 @@ a { color: #5A7A3E; }
 
 <h2>10. Changes to this policy</h2>
 <p>If a future version changes how we handle data, we will notify you in-app and update this page. Material changes will prompt re-consent on next launch.</p>
+<p>This update explains how recipes are organized from shared links. After updating the mainland China Android version, you will see the updated policy on first launch and be asked to confirm it once.</p>
 
 <h2>11. Contact</h2>
 <p>For questions or to exercise your data rights (access / correction / deletion):</p>
