@@ -20,7 +20,7 @@ a { color: #5A7A3E; }
 <body>
 
 <h1>YouCai Privacy Policy</h1>
-<p class="meta">Last updated: November 10, 2026 · Effective: November 10, 2026 · Applies to YouCai for iOS, Android and HarmonyOS</p>
+<p class="meta">Last updated: November 20, 2026 · Effective: November 20, 2026 · Applies to YouCai for iOS, Android and HarmonyOS</p>
 
 <p>YouCai is a fridge vegetable tracker. We follow data minimization: we collect only what is needed to run the app. No ads, no profiling, no selling or sharing your data with data brokers. This policy fully discloses every third-party service we integrate and how data flows.</p>
 
@@ -61,7 +61,7 @@ a { color: #5A7A3E; }
 
 <h2 id="recipe-import">3.2 Organizing recipes from shared links</h2>
 <p>On the mainland China Android version, when you open the Import recipe screen or return to it from another app with the input field empty, YouCai checks on your device whether the clipboard text contains a supported share link and asks whether you want to paste it. The text is added only if you tap “Paste,” and you can edit or clear it. Checking the clipboard and pasting do not send the text to our server. Only when you tap the “Import recipe” button does YouCai send the contents of the input field, including the link and any text included with the share, to our server to extract the link and organize the recipe.</p>
-<p>To organize a recipe, we may retrieve the public text, images, video and audio track at the link. Our servers in mainland China transcribe the public audio and, when needed, recognize captions in video frames. YouCai does not request microphone permission or record audio from your device. We may send text from the source, the audio transcription or recognized captions to Zhipu GLM to extract ingredients and cooking steps. If we cannot read a public Douyin page directly, we may send its public link to a fallback resolver, without the rest of the shared text or account information. See <a href="#recipe-import-processors">section 5.1</a>.</p>
+<p>To organize a recipe, we may retrieve the public text, images, video and audio track at the link. Our servers in mainland China transcribe the public audio and, when needed, recognize captions in video frames. YouCai does not request microphone permission or record audio from your device. We may send text from the source, the audio transcription or recognized captions to DeepSeek's large language model service to extract ingredients and cooking steps. If we cannot read a public Douyin page directly, we may send its public link to a fallback resolver, without the rest of the shared text or account information. See <a href="#recipe-import-processors">section 5.1</a>.</p>
 <p>Import task records expire after seven days. Once processed successfully, the recipe is saved to My Recipes. The saved recipe is separate from the temporary import task and is not deleted when that task expires. You can view, edit and delete saved recipes in the app.</p>
 
 <h2>4. Where your data lives</h2>
@@ -87,12 +87,12 @@ a { color: #5A7A3E; }
 
 <h2 id="recipe-import-processors">5.1 Third-party services for recipe import</h2>
 <p>Our server uses these services as needed after you start organizing. They are not SDKs installed on your device.</p>
-<h3>Zhipu GLM</h3>
+<h3>DeepSeek</h3>
 <ul>
-<li>Provider: Beijing Zhipu Huazhang Technology Co., Ltd.</li>
+<li>Provider: Hangzhou DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.</li>
 <li>Purpose: extract ingredients and cooking steps from public source content</li>
 <li>Information processed: text from the public source, the audio transcription or recognized captions. We do not provide account information or audio from your device</li>
-<li>Privacy policy: <a href="https://docs.bigmodel.cn/cn/terms/privacy-policy" target="_blank" rel="noopener noreferrer">https://docs.bigmodel.cn/cn/terms/privacy-policy</a></li>
+<li>Privacy policy: <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" target="_blank" rel="noopener noreferrer">https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html</a></li>
 </ul>
 <h3>Fallback services for public Douyin links</h3>
 <ul>
